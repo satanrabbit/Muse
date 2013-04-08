@@ -1,0 +1,1268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6D259BE9-0BA3-4D64-92D7-737ED7B4B847}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Muse</RootNamespace>
+    <AssemblyName>Muse</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\MuseDB.mdf" />
+    <Content Include="App_Data\MuseDB_log.ldf">
+      <DependentUpon>MuseDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\Alice\one-full.css" />
+    <Content Include="Content\kissy\anim\base-min.js" />
+    <Content Include="Content\kissy\anim\base.js" />
+    <Content Include="Content\kissy\anim\facade-min.js" />
+    <Content Include="Content\kissy\anim\facade.js" />
+    <Content Include="Content\kissy\anim\timer-min.js" />
+    <Content Include="Content\kissy\anim\timer.js" />
+    <Content Include="Content\kissy\anim\transition-min.js" />
+    <Content Include="Content\kissy\anim\transition.js" />
+    <Content Include="Content\kissy\base-min.js" />
+    <Content Include="Content\kissy\base.js" />
+    <Content Include="Content\kissy\button-min.js" />
+    <Content Include="Content\kissy\button.js" />
+    <Content Include="Content\kissy\button\assets\dpl-min.css" />
+    <Content Include="Content\kissy\button\assets\dpl.css" />
+    <Content Include="Content\kissy\button\assets\dpl\button-groups-min.css" />
+    <Content Include="Content\kissy\button\assets\dpl\button-groups.css" />
+    <Content Include="Content\kissy\button\assets\dpl\button-min.css" />
+    <Content Include="Content\kissy\button\assets\dpl\button.css" />
+    <Content Include="Content\kissy\button\assets\dpl\mixin-min.css" />
+    <Content Include="Content\kissy\button\assets\dpl\mixin.css" />
+    <Content Include="Content\kissy\button\assets\dpl\variables-min.css" />
+    <Content Include="Content\kissy\button\assets\dpl\variables.css" />
+    <Content Include="Content\kissy\calendar-min.js" />
+    <Content Include="Content\kissy\calendar.js" />
+    <Content Include="Content\kissy\calendar\assets\dpl-min.css" />
+    <Content Include="Content\kissy\calendar\assets\dpl.css" />
+    <Content Include="Content\kissy\color-min.js" />
+    <Content Include="Content\kissy\color.js" />
+    <Content Include="Content\kissy\combobox-min.js" />
+    <Content Include="Content\kissy\combobox.js" />
+    <Content Include="Content\kissy\combobox\assets\dpl-min.css" />
+    <Content Include="Content\kissy\combobox\assets\dpl.css" />
+    <Content Include="Content\kissy\combobox\assets\dpl\combobox-min.css" />
+    <Content Include="Content\kissy\combobox\assets\dpl\combobox.css" />
+    <Content Include="Content\kissy\combobox\assets\dpl\variables-min.css" />
+    <Content Include="Content\kissy\combobox\assets\dpl\variables.css" />
+    <Content Include="Content\kissy\component\base-min.js" />
+    <Content Include="Content\kissy\component\base.js" />
+    <Content Include="Content\kissy\component\extension-min.js" />
+    <Content Include="Content\kissy\component\extension.js" />
+    <Content Include="Content\kissy\component\plugin\drag-min.js" />
+    <Content Include="Content\kissy\component\plugin\drag.js" />
+    <Content Include="Content\kissy\component\plugin\resize-min.js" />
+    <Content Include="Content\kissy\component\plugin\resize.js" />
+    <Content Include="Content\kissy\cookie-min.js" />
+    <Content Include="Content\kissy\cookie.js" />
+    <Content Include="Content\kissy\css\dpl\badges-min.css" />
+    <Content Include="Content\kissy\css\dpl\badges.css" />
+    <Content Include="Content\kissy\css\dpl\base-min.css" />
+    <Content Include="Content\kissy\css\dpl\base.css" />
+    <Content Include="Content\kissy\css\dpl\common-min.css" />
+    <Content Include="Content\kissy\css\dpl\common.css" />
+    <Content Include="Content\kissy\css\dpl\flying-swing-min.css" />
+    <Content Include="Content\kissy\css\dpl\flying-swing.css" />
+    <Content Include="Content\kissy\css\dpl\forms-min.css" />
+    <Content Include="Content\kissy\css\dpl\forms.css" />
+    <Content Include="Content\kissy\css\dpl\grids-min.css" />
+    <Content Include="Content\kissy\css\dpl\grids.css" />
+    <Content Include="Content\kissy\css\dpl\icons-min.css" />
+    <Content Include="Content\kissy\css\dpl\icons-mixin-min.css" />
+    <Content Include="Content\kissy\css\dpl\icons-mixin.css" />
+    <Content Include="Content\kissy\css\dpl\icons.css" />
+    <Content Include="Content\kissy\css\dpl\labels-min.css" />
+    <Content Include="Content\kissy\css\dpl\labels.css" />
+    <Content Include="Content\kissy\css\dpl\mixins-min.css" />
+    <Content Include="Content\kissy\css\dpl\mixins.css" />
+    <Content Include="Content\kissy\css\dpl\reset-context-min.css" />
+    <Content Include="Content\kissy\css\dpl\reset-context.css" />
+    <Content Include="Content\kissy\css\dpl\reset-min.css" />
+    <Content Include="Content\kissy\css\dpl\reset-mixin-min.css" />
+    <Content Include="Content\kissy\css\dpl\reset-mixin.css" />
+    <Content Include="Content\kissy\css\dpl\reset.css" />
+    <Content Include="Content\kissy\css\dpl\tables-min.css" />
+    <Content Include="Content\kissy\css\dpl\tables.css" />
+    <Content Include="Content\kissy\css\dpl\variables-min.css" />
+    <Content Include="Content\kissy\css\dpl\variables.css" />
+    <Content Include="Content\kissy\datalazyload-min.js" />
+    <Content Include="Content\kissy\datalazyload.js" />
+    <Content Include="Content\kissy\dd\base-min.js" />
+    <Content Include="Content\kissy\dd\base.js" />
+    <Content Include="Content\kissy\dd\droppable-min.js" />
+    <Content Include="Content\kissy\dd\droppable.js" />
+    <Content Include="Content\kissy\dd\plugin\constrain-min.js" />
+    <Content Include="Content\kissy\dd\plugin\constrain.js" />
+    <Content Include="Content\kissy\dd\plugin\proxy-min.js" />
+    <Content Include="Content\kissy\dd\plugin\proxy.js" />
+    <Content Include="Content\kissy\dd\plugin\scroll-min.js" />
+    <Content Include="Content\kissy\dd\plugin\scroll.js" />
+    <Content Include="Content\kissy\dom\base-min.js" />
+    <Content Include="Content\kissy\dom\base.js" />
+    <Content Include="Content\kissy\dom\class-list-min.js" />
+    <Content Include="Content\kissy\dom\class-list.js" />
+    <Content Include="Content\kissy\dom\ie-min.js" />
+    <Content Include="Content\kissy\dom\ie.js" />
+    <Content Include="Content\kissy\dom\selector-min.js" />
+    <Content Include="Content\kissy\dom\selector.js" />
+    <Content Include="Content\kissy\editor-min.js" />
+    <Content Include="Content\kissy\editor.js" />
+    <Content Include="Content\kissy\editor\plugin\back-color\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\back-color\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\back-color\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\back-color\index.js" />
+    <Content Include="Content\kissy\editor\plugin\bold\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\bold\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\bold\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\bold\index.js" />
+    <Content Include="Content\kissy\editor\plugin\bubble\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\bubble\index.js" />
+    <Content Include="Content\kissy\editor\plugin\button\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\button\index.js" />
+    <Content Include="Content\kissy\editor\plugin\checkbox-source-area\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\checkbox-source-area\index.js" />
+    <Content Include="Content\kissy\editor\plugin\code\dialog-min.js" />
+    <Content Include="Content\kissy\editor\plugin\code\dialog.js" />
+    <Content Include="Content\kissy\editor\plugin\code\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\code\index.js" />
+    <Content Include="Content\kissy\editor\plugin\color\btn-min.js" />
+    <Content Include="Content\kissy\editor\plugin\color\btn.js" />
+    <Content Include="Content\kissy\editor\plugin\color\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\color\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\color\color-picker\dialog-min.js" />
+    <Content Include="Content\kissy\editor\plugin\color\color-picker\dialog.js" />
+    <Content Include="Content\kissy\editor\plugin\contextmenu\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\contextmenu\index.js" />
+    <Content Include="Content\kissy\editor\plugin\dent-utils\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\dent-utils\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\dialog-loader\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\dialog-loader\index.js" />
+    <Content Include="Content\kissy\editor\plugin\dialog\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\dialog\index.js" />
+    <Content Include="Content\kissy\editor\plugin\draft\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\draft\index.js" />
+    <Content Include="Content\kissy\editor\plugin\drag-upload\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\drag-upload\index.js" />
+    <Content Include="Content\kissy\editor\plugin\element-path\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\element-path\index.js" />
+    <Content Include="Content\kissy\editor\plugin\fake-objects\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\fake-objects\index.js" />
+    <Content Include="Content\kissy\editor\plugin\flash-bridge\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\flash-bridge\index.js" />
+    <Content Include="Content\kissy\editor\plugin\flash-common\baseClass-min.js" />
+    <Content Include="Content\kissy\editor\plugin\flash-common\baseClass.js" />
+    <Content Include="Content\kissy\editor\plugin\flash-common\utils-min.js" />
+    <Content Include="Content\kissy\editor\plugin\flash-common\utils.js" />
+    <Content Include="Content\kissy\editor\plugin\flash\dialog-min.js" />
+    <Content Include="Content\kissy\editor\plugin\flash\dialog.js" />
+    <Content Include="Content\kissy\editor\plugin\flash\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\flash\index.js" />
+    <Content Include="Content\kissy\editor\plugin\focus-fix\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\focus-fix\index.js" />
+    <Content Include="Content\kissy\editor\plugin\font-family\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\font-family\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\font-family\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\font-family\index.js" />
+    <Content Include="Content\kissy\editor\plugin\font-size\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\font-size\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\font-size\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\font-size\index.js" />
+    <Content Include="Content\kissy\editor\plugin\font\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\font\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\font\ui-min.js" />
+    <Content Include="Content\kissy\editor\plugin\font\ui.js" />
+    <Content Include="Content\kissy\editor\plugin\fore-color\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\fore-color\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\fore-color\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\fore-color\index.js" />
+    <Content Include="Content\kissy\editor\plugin\heading\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\heading\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\heading\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\heading\index.js" />
+    <Content Include="Content\kissy\editor\plugin\image\dialog-min.js" />
+    <Content Include="Content\kissy\editor\plugin\image\dialog.js" />
+    <Content Include="Content\kissy\editor\plugin\image\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\image\index.js" />
+    <Content Include="Content\kissy\editor\plugin\indent\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\indent\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\indent\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\indent\index.js" />
+    <Content Include="Content\kissy\editor\plugin\italic\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\italic\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\italic\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\italic\index.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-center\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-center\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-center\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-center\index.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-left\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-left\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-left\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-left\index.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-right\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-right\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-right\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-right\index.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-utils\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\justify-utils\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\link\dialog-min.js" />
+    <Content Include="Content\kissy\editor\plugin\link\dialog.js" />
+    <Content Include="Content\kissy\editor\plugin\link\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\link\index.js" />
+    <Content Include="Content\kissy\editor\plugin\link\utils-min.js" />
+    <Content Include="Content\kissy\editor\plugin\link\utils.js" />
+    <Content Include="Content\kissy\editor\plugin\list-utils\btn-min.js" />
+    <Content Include="Content\kissy\editor\plugin\list-utils\btn.js" />
+    <Content Include="Content\kissy\editor\plugin\list-utils\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\list-utils\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\list-utils\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\list-utils\index.js" />
+    <Content Include="Content\kissy\editor\plugin\local-storage\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\local-storage\index.js" />
+    <Content Include="Content\kissy\editor\plugin\local-storage\storage-whitelist.xml" />
+    <Content Include="Content\kissy\editor\plugin\local-storage\store.swf" />
+    <Content Include="Content\kissy\editor\plugin\local-storage\swfstore.swf" />
+    <Content Include="Content\kissy\editor\plugin\maximize\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\maximize\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\maximize\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\maximize\index.js" />
+    <Content Include="Content\kissy\editor\plugin\menubutton\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\menubutton\index.js" />
+    <Content Include="Content\kissy\editor\plugin\multiple-upload\dialog-min.js" />
+    <Content Include="Content\kissy\editor\plugin\multiple-upload\dialog.js" />
+    <Content Include="Content\kissy\editor\plugin\multiple-upload\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\multiple-upload\index.js" />
+    <Content Include="Content\kissy\editor\plugin\ordered-list\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\ordered-list\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\ordered-list\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\ordered-list\index.js" />
+    <Content Include="Content\kissy\editor\plugin\outdent\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\outdent\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\outdent\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\outdent\index.js" />
+    <Content Include="Content\kissy\editor\plugin\overlay\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\overlay\index.js" />
+    <Content Include="Content\kissy\editor\plugin\page-break\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\page-break\index.js" />
+    <Content Include="Content\kissy\editor\plugin\preview\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\preview\index.js" />
+    <Content Include="Content\kissy\editor\plugin\progressbar\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\progressbar\index.js" />
+    <Content Include="Content\kissy\editor\plugin\remove-format\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\remove-format\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\remove-format\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\remove-format\index.js" />
+    <Content Include="Content\kissy\editor\plugin\resize\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\resize\index.js" />
+    <Content Include="Content\kissy\editor\plugin\separator\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\separator\index.js" />
+    <Content Include="Content\kissy\editor\plugin\smiley\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\smiley\index.js" />
+    <Content Include="Content\kissy\editor\plugin\source-area\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\source-area\index.js" />
+    <Content Include="Content\kissy\editor\plugin\strike-through\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\strike-through\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\strike-through\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\strike-through\index.js" />
+    <Content Include="Content\kissy\editor\plugin\table\dialog-min.js" />
+    <Content Include="Content\kissy\editor\plugin\table\dialog.js" />
+    <Content Include="Content\kissy\editor\plugin\table\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\table\index.js" />
+    <Content Include="Content\kissy\editor\plugin\underline\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\underline\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\underline\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\underline\index.js" />
+    <Content Include="Content\kissy\editor\plugin\undo\btn-min.js" />
+    <Content Include="Content\kissy\editor\plugin\undo\btn.js" />
+    <Content Include="Content\kissy\editor\plugin\undo\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\undo\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\undo\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\undo\index.js" />
+    <Content Include="Content\kissy\editor\plugin\unordered-list\cmd-min.js" />
+    <Content Include="Content\kissy\editor\plugin\unordered-list\cmd.js" />
+    <Content Include="Content\kissy\editor\plugin\unordered-list\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\unordered-list\index.js" />
+    <Content Include="Content\kissy\editor\plugin\uploader\uploader.longzang.swf" />
+    <Content Include="Content\kissy\editor\plugin\uploader\uploader.yui.swf" />
+    <Content Include="Content\kissy\editor\plugin\video\dialog-min.js" />
+    <Content Include="Content\kissy\editor\plugin\video\dialog.js" />
+    <Content Include="Content\kissy\editor\plugin\video\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\video\index.js" />
+    <Content Include="Content\kissy\editor\plugin\word-filter\dynamic\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\word-filter\dynamic\index.js" />
+    <Content Include="Content\kissy\editor\plugin\xiami-music\dialog-min.js" />
+    <Content Include="Content\kissy\editor\plugin\xiami-music\dialog.js" />
+    <Content Include="Content\kissy\editor\plugin\xiami-music\index-min.js" />
+    <Content Include="Content\kissy\editor\plugin\xiami-music\index.js" />
+    <Content Include="Content\kissy\editor\theme\cool\arrow.png" />
+    <Content Include="Content\kissy\editor\theme\cool\bgcolor.png" />
+    <Content Include="Content\kissy\editor\theme\cool\bold.png" />
+    <Content Include="Content\kissy\editor\theme\cool\close.png" />
+    <Content Include="Content\kissy\editor\theme\cool\code.png" />
+    <Content Include="Content\kissy\editor\theme\cool\color.png" />
+    <Content Include="Content\kissy\editor\theme\cool\cool-ie6.png" />
+    <Content Include="Content\kissy\editor\theme\cool\cool.png" />
+    <Content Include="Content\kissy\editor\theme\cool\editor-min.css" />
+    <Content Include="Content\kissy\editor\theme\cool\editor-pkg-min.css" />
+    <Content Include="Content\kissy\editor\theme\cool\editor-pkg.css" />
+    <Content Include="Content\kissy\editor\theme\cool\editor.css" />
+    <Content Include="Content\kissy\editor\theme\cool\flash.png" />
+    <Content Include="Content\kissy\editor\theme\cool\icon_help.png" />
+    <Content Include="Content\kissy\editor\theme\cool\icon_save.png" />
+    <Content Include="Content\kissy\editor\theme\cool\image.png" />
+    <Content Include="Content\kissy\editor\theme\cool\indent.png" />
+    <Content Include="Content\kissy\editor\theme\cool\italic.png" />
+    <Content Include="Content\kissy\editor\theme\cool\justify-center.png" />
+    <Content Include="Content\kissy\editor\theme\cool\justify-left.png" />
+    <Content Include="Content\kissy\editor\theme\cool\justify-right.png" />
+    <Content Include="Content\kissy\editor\theme\cool\ks-editor-button-bg-active.png" />
+    <Content Include="Content\kissy\editor\theme\cool\ks-editor-button-bg.png" />
+    <Content Include="Content\kissy\editor\theme\cool\link.png" />
+    <Content Include="Content\kissy\editor\theme\cool\maximize.png" />
+    <Content Include="Content\kissy\editor\theme\cool\multiple-image.png" />
+    <Content Include="Content\kissy\editor\theme\cool\music.png" />
+    <Content Include="Content\kissy\editor\theme\cool\ol.png" />
+    <Content Include="Content\kissy\editor\theme\cool\outdent.png" />
+    <Content Include="Content\kissy\editor\theme\cool\overlay-hd.png" />
+    <Content Include="Content\kissy\editor\theme\cool\pagebreak.png" />
+    <Content Include="Content\kissy\editor\theme\cool\preview.png" />
+    <Content Include="Content\kissy\editor\theme\cool\redo.png" />
+    <Content Include="Content\kissy\editor\theme\cool\removeformat.png" />
+    <Content Include="Content\kissy\editor\theme\cool\resizer.png" />
+    <Content Include="Content\kissy\editor\theme\cool\restore.png" />
+    <Content Include="Content\kissy\editor\theme\cool\smiley.png" />
+    <Content Include="Content\kissy\editor\theme\cool\sourcearea.png" />
+    <Content Include="Content\kissy\editor\theme\cool\strike.png" />
+    <Content Include="Content\kissy\editor\theme\cool\table.png" />
+    <Content Include="Content\kissy\editor\theme\cool\templates.png" />
+    <Content Include="Content\kissy\editor\theme\cool\text-bg.gif" />
+    <Content Include="Content\kissy\editor\theme\cool\text-bg.png" />
+    <Content Include="Content\kissy\editor\theme\cool\ul.png" />
+    <Content Include="Content\kissy\editor\theme\cool\underline.png" />
+    <Content Include="Content\kissy\editor\theme\cool\undo.png" />
+    <Content Include="Content\kissy\editor\theme\cool\video.png" />
+    <Content Include="Content\kissy\editor\theme\editor-common-min.css" />
+    <Content Include="Content\kissy\editor\theme\editor-common.css" />
+    <Content Include="Content\kissy\editor\theme\editor-iframe-min.css" />
+    <Content Include="Content\kissy\editor\theme\editor-iframe.css" />
+    <Content Include="Content\kissy\editor\theme\loading.gif" />
+    <Content Include="Content\kissy\editor\theme\pagebreak.gif" />
+    <Content Include="Content\kissy\editor\theme\placeholder_flash.png" />
+    <Content Include="Content\kissy\editor\theme\placeholder_video.png" />
+    <Content Include="Content\kissy\editor\theme\placeholder_xiami.png" />
+    <Content Include="Content\kissy\editor\theme\spacer.gif" />
+    <Content Include="Content\kissy\editor\theme\tao-loading.gif" />
+    <Content Include="Content\kissy\event\base-min.js" />
+    <Content Include="Content\kissy\event\base.js" />
+    <Content Include="Content\kissy\event\custom-min.js" />
+    <Content Include="Content\kissy\event\custom.js" />
+    <Content Include="Content\kissy\event\dom\base-min.js" />
+    <Content Include="Content\kissy\event\dom\base.js" />
+    <Content Include="Content\kissy\event\dom\focusin-min.js" />
+    <Content Include="Content\kissy\event\dom\focusin.js" />
+    <Content Include="Content\kissy\event\dom\hashchange-min.js" />
+    <Content Include="Content\kissy\event\dom\hashchange.js" />
+    <Content Include="Content\kissy\event\dom\ie-min.js" />
+    <Content Include="Content\kissy\event\dom\ie.js" />
+    <Content Include="Content\kissy\event\dom\shake-min.js" />
+    <Content Include="Content\kissy\event\dom\shake.js" />
+    <Content Include="Content\kissy\event\dom\touch-min.js" />
+    <Content Include="Content\kissy\event\dom\touch.js" />
+    <Content Include="Content\kissy\htmlparser-min.js" />
+    <Content Include="Content\kissy\htmlparser.js" />
+    <Content Include="Content\kissy\imagezoom-min.js" />
+    <Content Include="Content\kissy\imagezoom.js" />
+    <Content Include="Content\kissy\io-min.js" />
+    <Content Include="Content\kissy\io.js" />
+    <Content Include="Content\kissy\io\io.swf" />
+    <Content Include="Content\kissy\json-min.js" />
+    <Content Include="Content\kissy\json.js" />
+    <Content Include="Content\kissy\kison-min.js" />
+    <Content Include="Content\kissy\kison.js" />
+    <Content Include="Content\kissy\kissy-min.js" />
+    <Content Include="Content\kissy\kissy-nodejs-min.js" />
+    <Content Include="Content\kissy\kissy-nodejs.js" />
+    <Content Include="Content\kissy\kissy.js" />
+    <Content Include="Content\kissy\menu-min.js" />
+    <Content Include="Content\kissy\menu.js" />
+    <Content Include="Content\kissy\menubutton-min.js" />
+    <Content Include="Content\kissy\menubutton.js" />
+    <Content Include="Content\kissy\menubutton\assets\dpl-min.css" />
+    <Content Include="Content\kissy\menubutton\assets\dpl.css" />
+    <Content Include="Content\kissy\menubutton\assets\dpl\menubutton-min.css" />
+    <Content Include="Content\kissy\menubutton\assets\dpl\menubutton.css" />
+    <Content Include="Content\kissy\menubutton\assets\dpl\variables-min.css" />
+    <Content Include="Content\kissy\menubutton\assets\dpl\variables.css" />
+    <Content Include="Content\kissy\menu\assets\dpl-min.css" />
+    <Content Include="Content\kissy\menu\assets\dpl.css" />
+    <Content Include="Content\kissy\menu\assets\dpl\menu-min.css" />
+    <Content Include="Content\kissy\menu\assets\dpl\menu.css" />
+    <Content Include="Content\kissy\menu\assets\dpl\variables-min.css" />
+    <Content Include="Content\kissy\menu\assets\dpl\variables.css" />
+    <Content Include="Content\kissy\mvc-min.js" />
+    <Content Include="Content\kissy\mvc.js" />
+    <Content Include="Content\kissy\node-min.js" />
+    <Content Include="Content\kissy\node.js" />
+    <Content Include="Content\kissy\overlay-min.js" />
+    <Content Include="Content\kissy\overlay.js" />
+    <Content Include="Content\kissy\overlay\assets\dpl-min.css" />
+    <Content Include="Content\kissy\overlay\assets\dpl.css" />
+    <Content Include="Content\kissy\overlay\assets\dpl\dialog-min.css" />
+    <Content Include="Content\kissy\overlay\assets\dpl\dialog.css" />
+    <Content Include="Content\kissy\overlay\assets\dpl\overlay-min.css" />
+    <Content Include="Content\kissy\overlay\assets\dpl\overlay.css" />
+    <Content Include="Content\kissy\overlay\assets\dpl\popup-min.css" />
+    <Content Include="Content\kissy\overlay\assets\dpl\popup.css" />
+    <Content Include="Content\kissy\overlay\assets\dpl\variables-min.css" />
+    <Content Include="Content\kissy\overlay\assets\dpl\variables.css" />
+    <Content Include="Content\kissy\resizable-min.js" />
+    <Content Include="Content\kissy\resizable.js" />
+    <Content Include="Content\kissy\rich-base-min.js" />
+    <Content Include="Content\kissy\rich-base.js" />
+    <Content Include="Content\kissy\scrollview\base-min.js" />
+    <Content Include="Content\kissy\scrollview\base.js" />
+    <Content Include="Content\kissy\scrollview\drag-min.js" />
+    <Content Include="Content\kissy\scrollview\drag.js" />
+    <Content Include="Content\kissy\scrollview\plugin\scrollbar-min.js" />
+    <Content Include="Content\kissy\scrollview\plugin\scrollbar.js" />
+    <Content Include="Content\kissy\seed-min.js" />
+    <Content Include="Content\kissy\seed.js" />
+    <Content Include="Content\kissy\separator-min.js" />
+    <Content Include="Content\kissy\separator.js" />
+    <Content Include="Content\kissy\split-button-min.js" />
+    <Content Include="Content\kissy\split-button.js" />
+    <Content Include="Content\kissy\split-button\assets\dpl-min.css" />
+    <Content Include="Content\kissy\split-button\assets\dpl.css" />
+    <Content Include="Content\kissy\split-button\assets\dpl\split-button-min.css" />
+    <Content Include="Content\kissy\split-button\assets\dpl\split-button.css" />
+    <Content Include="Content\kissy\split-button\assets\dpl\variables-min.css" />
+    <Content Include="Content\kissy\split-button\assets\dpl\variables.css" />
+    <Content Include="Content\kissy\stylesheet-min.js" />
+    <Content Include="Content\kissy\stylesheet.js" />
+    <Content Include="Content\kissy\swf-min.js" />
+    <Content Include="Content\kissy\swf.js" />
+    <Content Include="Content\kissy\swf\assets\expressInstall.swf" />
+    <Content Include="Content\kissy\switchable-min.js" />
+    <Content Include="Content\kissy\switchable.js" />
+    <Content Include="Content\kissy\tabs-min.js" />
+    <Content Include="Content\kissy\tabs.js" />
+    <Content Include="Content\kissy\tabs\assets\dpl-min.css" />
+    <Content Include="Content\kissy\tabs\assets\dpl.css" />
+    <Content Include="Content\kissy\tabs\assets\dpl\tabs-min.css" />
+    <Content Include="Content\kissy\tabs\assets\dpl\tabs.css" />
+    <Content Include="Content\kissy\tabs\assets\dpl\variables-min.css" />
+    <Content Include="Content\kissy\tabs\assets\dpl\variables.css" />
+    <Content Include="Content\kissy\toolbar-min.js" />
+    <Content Include="Content\kissy\toolbar.js" />
+    <Content Include="Content\kissy\toolbar\assets\dpl-min.css" />
+    <Content Include="Content\kissy\toolbar\assets\dpl.css" />
+    <Content Include="Content\kissy\toolbar\assets\dpl\toolbar-min.css" />
+    <Content Include="Content\kissy\toolbar\assets\dpl\toolbar.css" />
+    <Content Include="Content\kissy\toolbar\assets\dpl\variables-min.css" />
+    <Content Include="Content\kissy\toolbar\assets\dpl\variables.css" />
+    <Content Include="Content\kissy\tree-min.js" />
+    <Content Include="Content\kissy\tree.js" />
+    <Content Include="Content\kissy\tree\assets\dpl-min.css" />
+    <Content Include="Content\kissy\tree\assets\dpl.css" />
+    <Content Include="Content\kissy\waterfall-min.js" />
+    <Content Include="Content\kissy\waterfall.js" />
+    <Content Include="Content\kissy\xtemplate\compiler-min.js" />
+    <Content Include="Content\kissy\xtemplate\compiler.js" />
+    <Content Include="Content\kissy\xtemplate\facade-min.js" />
+    <Content Include="Content\kissy\xtemplate\facade.js" />
+    <Content Include="Content\kissy\xtemplate\runtime-min.js" />
+    <Content Include="Content\kissy\xtemplate\runtime.js" />
+    <Content Include="Content\easyui\changelog.txt" />
+    <Content Include="Content\easyui\demo\accordion\actions.html" />
+    <Content Include="Content\easyui\demo\accordion\ajax.html" />
+    <Content Include="Content\easyui\demo\accordion\basic.html" />
+    <Content Include="Content\easyui\demo\accordion\tools.html" />
+    <Content Include="Content\easyui\demo\accordion\_content.html" />
+    <Content Include="Content\easyui\demo\calendar\basic.html" />
+    <Content Include="Content\easyui\demo\calendar\firstday.html" />
+    <Content Include="Content\easyui\demo\combobox\actions.html" />
+    <Content Include="Content\easyui\demo\combobox\basic.html" />
+    <Content Include="Content\easyui\demo\combobox\customformat.html" />
+    <Content Include="Content\easyui\demo\combobox\dynamicdata.html" />
+    <Content Include="Content\easyui\demo\combobox\multiple.html" />
+    <Content Include="Content\easyui\demo\combobox\remotedata.html" />
+    <Content Include="Content\easyui\demo\combobox\remotejsonp.html" />
+    <Content Include="Content\easyui\demo\combogrid\actions.html" />
+    <Content Include="Content\easyui\demo\combogrid\basic.html" />
+    <Content Include="Content\easyui\demo\combogrid\initvalue.html" />
+    <Content Include="Content\easyui\demo\combogrid\multiple.html" />
+    <Content Include="Content\easyui\demo\combotree\actions.html" />
+    <Content Include="Content\easyui\demo\combotree\basic.html" />
+    <Content Include="Content\easyui\demo\combotree\initvalue.html" />
+    <Content Include="Content\easyui\demo\combotree\multiple.html" />
+    <Content Include="Content\easyui\demo\combo\basic.html" />
+    <Content Include="Content\easyui\demo\datagrid\basic.html" />
+    <Content Include="Content\easyui\demo\datagrid\cellstyle.html" />
+    <Content Include="Content\easyui\demo\datagrid\checkbox.html" />
+    <Content Include="Content\easyui\demo\datagrid\clientpagination.html" />
+    <Content Include="Content\easyui\demo\datagrid\columngroup.html" />
+    <Content Include="Content\easyui\demo\datagrid\complextoolbar.html" />
+    <Content Include="Content\easyui\demo\datagrid\contextmenu.html" />
+    <Content Include="Content\easyui\demo\datagrid\custompager.html" />
+    <Content Include="Content\easyui\demo\datagrid\footer.html" />
+    <Content Include="Content\easyui\demo\datagrid\formatcolumns.html" />
+    <Content Include="Content\easyui\demo\datagrid\frozencolumns.html" />
+    <Content Include="Content\easyui\demo\datagrid\frozenrows.html" />
+    <Content Include="Content\easyui\demo\datagrid\mergecells.html" />
+    <Content Include="Content\easyui\demo\datagrid\rowborder.html" />
+    <Content Include="Content\easyui\demo\datagrid\rowediting.html" />
+    <Content Include="Content\easyui\demo\datagrid\rowstyle.html" />
+    <Content Include="Content\easyui\demo\datagrid\selection.html" />
+    <Content Include="Content\easyui\demo\datagrid\simpletoolbar.html" />
+    <Content Include="Content\easyui\demo\datagrid\transform.html" />
+    <Content Include="Content\easyui\demo\datebox\basic.html" />
+    <Content Include="Content\easyui\demo\datebox\dateformat.html" />
+    <Content Include="Content\easyui\demo\datebox\events.html" />
+    <Content Include="Content\easyui\demo\datebox\validate.html" />
+    <Content Include="Content\easyui\demo\datetimebox\basic.html" />
+    <Content Include="Content\easyui\demo\datetimebox\initvalue.html" />
+    <Content Include="Content\easyui\demo\datetimebox\showseconds.html" />
+    <Content Include="Content\easyui\demo\demo.css" />
+    <Content Include="Content\easyui\demo\dialog\basic.html" />
+    <Content Include="Content\easyui\demo\dialog\complextoolbar.html" />
+    <Content Include="Content\easyui\demo\dialog\toolbarbuttons.html" />
+    <Content Include="Content\easyui\demo\draggable\basic.html" />
+    <Content Include="Content\easyui\demo\draggable\constain.html" />
+    <Content Include="Content\easyui\demo\draggable\snap.html" />
+    <Content Include="Content\easyui\demo\droppable\accept.html" />
+    <Content Include="Content\easyui\demo\droppable\basic.html" />
+    <Content Include="Content\easyui\demo\droppable\sort.html" />
+    <Content Include="Content\easyui\demo\easyloader\basic.html" />
+    <Content Include="Content\easyui\demo\form\basic.html" />
+    <Content Include="Content\easyui\demo\form\load.html" />
+    <Content Include="Content\easyui\demo\layout\addremove.html" />
+    <Content Include="Content\easyui\demo\layout\basic.html" />
+    <Content Include="Content\easyui\demo\layout\complex.html" />
+    <Content Include="Content\easyui\demo\layout\full.html" />
+    <Content Include="Content\easyui\demo\layout\nestedlayout.html" />
+    <Content Include="Content\easyui\demo\layout\nocollapsible.html" />
+    <Content Include="Content\easyui\demo\layout\_content.html" />
+    <Content Include="Content\easyui\demo\linkbutton\basic.html" />
+    <Content Include="Content\easyui\demo\linkbutton\iconalign.html" />
+    <Content Include="Content\easyui\demo\linkbutton\plain.html" />
+    <Content Include="Content\easyui\demo\menubutton\actions.html" />
+    <Content Include="Content\easyui\demo\menubutton\basic.html" />
+    <Content Include="Content\easyui\demo\menu\basic.html" />
+    <Content Include="Content\easyui\demo\menu\customitem.html" />
+    <Content Include="Content\easyui\demo\menu\events.html" />
+    <Content Include="Content\easyui\demo\messager\alert.html" />
+    <Content Include="Content\easyui\demo\messager\basic.html" />
+    <Content Include="Content\easyui\demo\messager\interactive.html" />
+    <Content Include="Content\easyui\demo\messager\position.html" />
+    <Content Include="Content\easyui\demo\numberbox\basic.html" />
+    <Content Include="Content\easyui\demo\numberbox\format.html" />
+    <Content Include="Content\easyui\demo\numberbox\range.html" />
+    <Content Include="Content\easyui\demo\numberspinner\basic.html" />
+    <Content Include="Content\easyui\demo\numberspinner\increment.html" />
+    <Content Include="Content\easyui\demo\numberspinner\range.html" />
+    <Content Include="Content\easyui\demo\pagination\basic.html" />
+    <Content Include="Content\easyui\demo\pagination\custombuttons.html" />
+    <Content Include="Content\easyui\demo\pagination\simple.html" />
+    <Content Include="Content\easyui\demo\panel\basic.html" />
+    <Content Include="Content\easyui\demo\panel\customtools.html" />
+    <Content Include="Content\easyui\demo\panel\loadcontent.html" />
+    <Content Include="Content\easyui\demo\panel\nestedpanel.html" />
+    <Content Include="Content\easyui\demo\panel\paneltools.html" />
+    <Content Include="Content\easyui\demo\panel\_content.html" />
+    <Content Include="Content\easyui\demo\progressbar\basic.html" />
+    <Content Include="Content\easyui\demo\propertygrid\basic.html" />
+    <Content Include="Content\easyui\demo\propertygrid\customcolumns.html" />
+    <Content Include="Content\easyui\demo\propertygrid\groupformat.html" />
+    <Content Include="Content\easyui\demo\resizable\basic.html" />
+    <Content Include="Content\easyui\demo\searchbox\basic.html" />
+    <Content Include="Content\easyui\demo\searchbox\category.html" />
+    <Content Include="Content\easyui\demo\slider\basic.html" />
+    <Content Include="Content\easyui\demo\slider\formattip.html" />
+    <Content Include="Content\easyui\demo\slider\rule.html" />
+    <Content Include="Content\easyui\demo\slider\vertical.html" />
+    <Content Include="Content\easyui\demo\splitbutton\actions.html" />
+    <Content Include="Content\easyui\demo\splitbutton\basic.html" />
+    <Content Include="Content\easyui\demo\tabs\autoheight.html" />
+    <Content Include="Content\easyui\demo\tabs\basic.html" />
+    <Content Include="Content\easyui\demo\tabs\hover.html" />
+    <Content Include="Content\easyui\demo\tabs\nestedtabs.html" />
+    <Content Include="Content\easyui\demo\tabs\striptools.html" />
+    <Content Include="Content\easyui\demo\tabs\tabposition.html" />
+    <Content Include="Content\easyui\demo\tabs\tabstools.html" />
+    <Content Include="Content\easyui\demo\tabs\_content.html" />
+    <Content Include="Content\easyui\demo\timespinner\actions.html" />
+    <Content Include="Content\easyui\demo\timespinner\basic.html" />
+    <Content Include="Content\easyui\demo\timespinner\range.html" />
+    <Content Include="Content\easyui\demo\treegrid\actions.html" />
+    <Content Include="Content\easyui\demo\treegrid\basic.html" />
+    <Content Include="Content\easyui\demo\treegrid\contextmenu.html" />
+    <Content Include="Content\easyui\demo\treegrid\editable.html" />
+    <Content Include="Content\easyui\demo\treegrid\footer.html" />
+    <Content Include="Content\easyui\demo\treegrid\reports.html" />
+    <Content Include="Content\easyui\demo\tree\actions.html" />
+    <Content Include="Content\easyui\demo\tree\animation.html" />
+    <Content Include="Content\easyui\demo\tree\basic.html" />
+    <Content Include="Content\easyui\demo\tree\checkbox.html" />
+    <Content Include="Content\easyui\demo\tree\contextmenu.html" />
+    <Content Include="Content\easyui\demo\tree\dnd.html" />
+    <Content Include="Content\easyui\demo\tree\editable.html" />
+    <Content Include="Content\easyui\demo\tree\icons.html" />
+    <Content Include="Content\easyui\demo\validatebox\basic.html" />
+    <Content Include="Content\easyui\demo\window\basic.html" />
+    <Content Include="Content\easyui\demo\window\customtools.html" />
+    <Content Include="Content\easyui\demo\window\inlinewindow.html" />
+    <Content Include="Content\easyui\demo\window\modalwindow.html" />
+    <Content Include="Content\easyui\demo\window\windowlayout.html" />
+    <Content Include="Content\easyui\easyloader.js" />
+    <Content Include="Content\easyui\easyui_ex.js" />
+    <Content Include="Content\easyui\jquery-1.8.0.min.js" />
+    <Content Include="Content\easyui\jquery.easyui.min.js" />
+    <Content Include="Content\easyui\jquery_easyUI_dialog_form.js" />
+    <Content Include="Content\easyui\licence_gpl.txt" />
+    <Content Include="Content\easyui\license_commercial.txt" />
+    <Content Include="Content\easyui\locale\easyui-lang-af.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-ar.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-bg.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-ca.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-cs.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-cz.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-da.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-de.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-el.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-en.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-es.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-fr.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-it.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-jp.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-nl.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-pt_BR.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-ru.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-tr.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-zh_CN.js" />
+    <Content Include="Content\easyui\locale\easyui-lang-zh_TW.js" />
+    <Content Include="Content\easyui\plugins\jquery.accordion.js" />
+    <Content Include="Content\easyui\plugins\jquery.calendar.js" />
+    <Content Include="Content\easyui\plugins\jquery.combo.js" />
+    <Content Include="Content\easyui\plugins\jquery.combobox.js" />
+    <Content Include="Content\easyui\plugins\jquery.combogrid.js" />
+    <Content Include="Content\easyui\plugins\jquery.combotree.js" />
+    <Content Include="Content\easyui\plugins\jquery.datagrid.js" />
+    <Content Include="Content\easyui\plugins\jquery.datebox.js" />
+    <Content Include="Content\easyui\plugins\jquery.datetimebox.js" />
+    <Content Include="Content\easyui\plugins\jquery.dialog.js" />
+    <Content Include="Content\easyui\plugins\jquery.draggable.js" />
+    <Content Include="Content\easyui\plugins\jquery.droppable.js" />
+    <Content Include="Content\easyui\plugins\jquery.form.js" />
+    <Content Include="Content\easyui\plugins\jquery.layout.js" />
+    <Content Include="Content\easyui\plugins\jquery.linkbutton.js" />
+    <Content Include="Content\easyui\plugins\jquery.menu.js" />
+    <Content Include="Content\easyui\plugins\jquery.menubutton.js" />
+    <Content Include="Content\easyui\plugins\jquery.messager.js" />
+    <Content Include="Content\easyui\plugins\jquery.numberbox.js" />
+    <Content Include="Content\easyui\plugins\jquery.numberspinner.js" />
+    <Content Include="Content\easyui\plugins\jquery.pagination.js" />
+    <Content Include="Content\easyui\plugins\jquery.panel.js" />
+    <Content Include="Content\easyui\plugins\jquery.parser.js" />
+    <Content Include="Content\easyui\plugins\jquery.progressbar.js" />
+    <Content Include="Content\easyui\plugins\jquery.propertygrid.js" />
+    <Content Include="Content\easyui\plugins\jquery.resizable.js" />
+    <Content Include="Content\easyui\plugins\jquery.searchbox.js" />
+    <Content Include="Content\easyui\plugins\jquery.slider.js" />
+    <Content Include="Content\easyui\plugins\jquery.spinner.js" />
+    <Content Include="Content\easyui\plugins\jquery.splitbutton.js" />
+    <Content Include="Content\easyui\plugins\jquery.tabs.js" />
+    <Content Include="Content\easyui\plugins\jquery.timespinner.js" />
+    <Content Include="Content\easyui\plugins\jquery.tree.js" />
+    <Content Include="Content\easyui\plugins\jquery.treegrid.js" />
+    <Content Include="Content\easyui\plugins\jquery.validatebox.js" />
+    <Content Include="Content\easyui\plugins\jquery.window.js" />
+    <Content Include="Content\easyui\readme.txt" />
+    <Content Include="Content\easyui\src\easyloader.js" />
+    <Content Include="Content\easyui\src\jquery.accordion.js" />
+    <Content Include="Content\easyui\src\jquery.calendar.js" />
+    <Content Include="Content\easyui\src\jquery.combobox.js" />
+    <Content Include="Content\easyui\src\jquery.datebox.js" />
+    <Content Include="Content\easyui\src\jquery.draggable.js" />
+    <Content Include="Content\easyui\src\jquery.droppable.js" />
+    <Content Include="Content\easyui\src\jquery.form.js" />
+    <Content Include="Content\easyui\src\jquery.linkbutton.js" />
+    <Content Include="Content\easyui\src\jquery.menu.js" />
+    <Content Include="Content\easyui\src\jquery.parser.js" />
+    <Content Include="Content\easyui\src\jquery.progressbar.js" />
+    <Content Include="Content\easyui\src\jquery.propertygrid.js" />
+    <Content Include="Content\easyui\src\jquery.resizable.js" />
+    <Content Include="Content\easyui\src\jquery.slider.js" />
+    <Content Include="Content\easyui\src\jquery.tabs.js" />
+    <Content Include="Content\easyui\src\jquery.window.js" />
+    <Content Include="Content\easyui\themes\black\accordion.css" />
+    <Content Include="Content\easyui\themes\black\calendar.css" />
+    <Content Include="Content\easyui\themes\black\combo.css" />
+    <Content Include="Content\easyui\themes\black\combobox.css" />
+    <Content Include="Content\easyui\themes\black\datagrid.css" />
+    <Content Include="Content\easyui\themes\black\datebox.css" />
+    <Content Include="Content\easyui\themes\black\dialog.css" />
+    <Content Include="Content\easyui\themes\black\easyui.css" />
+    <Content Include="Content\easyui\themes\black\images\accordion_arrows.png" />
+    <Content Include="Content\easyui\themes\black\images\blank.gif" />
+    <Content Include="Content\easyui\themes\black\images\calendar_arrows.png" />
+    <Content Include="Content\easyui\themes\black\images\combo_arrow.png" />
+    <Content Include="Content\easyui\themes\black\images\datagrid_icons.png" />
+    <Content Include="Content\easyui\themes\black\images\datebox_arrow.png" />
+    <Content Include="Content\easyui\themes\black\images\layout_arrows.png" />
+    <Content Include="Content\easyui\themes\black\images\linkbutton_bg.png" />
+    <Content Include="Content\easyui\themes\black\images\loading.gif" />
+    <Content Include="Content\easyui\themes\black\images\menu_arrows.png" />
+    <Content Include="Content\easyui\themes\black\images\messager_icons.png" />
+    <Content Include="Content\easyui\themes\black\images\pagination_icons.png" />
+    <Content Include="Content\easyui\themes\black\images\panel_tools.png" />
+    <Content Include="Content\easyui\themes\black\images\searchbox_button.png" />
+    <Content Include="Content\easyui\themes\black\images\slider_handle.png" />
+    <Content Include="Content\easyui\themes\black\images\spinner_arrows.png" />
+    <Content Include="Content\easyui\themes\black\images\tabs_icons.png" />
+    <Content Include="Content\easyui\themes\black\images\tree_icons.png" />
+    <Content Include="Content\easyui\themes\black\images\validatebox_arrows.png" />
+    <Content Include="Content\easyui\themes\black\images\validatebox_warning.png" />
+    <Content Include="Content\easyui\themes\black\layout.css" />
+    <Content Include="Content\easyui\themes\black\linkbutton.css" />
+    <Content Include="Content\easyui\themes\black\menu.css" />
+    <Content Include="Content\easyui\themes\black\menubutton.css" />
+    <Content Include="Content\easyui\themes\black\messager.css" />
+    <Content Include="Content\easyui\themes\black\pagination.css" />
+    <Content Include="Content\easyui\themes\black\panel.css" />
+    <Content Include="Content\easyui\themes\black\progressbar.css" />
+    <Content Include="Content\easyui\themes\black\propertygrid.css" />
+    <Content Include="Content\easyui\themes\black\searchbox.css" />
+    <Content Include="Content\easyui\themes\black\slider.css" />
+    <Content Include="Content\easyui\themes\black\spinner.css" />
+    <Content Include="Content\easyui\themes\black\splitbutton.css" />
+    <Content Include="Content\easyui\themes\black\tabs.css" />
+    <Content Include="Content\easyui\themes\black\tree.css" />
+    <Content Include="Content\easyui\themes\black\validatebox.css" />
+    <Content Include="Content\easyui\themes\black\window.css" />
+    <Content Include="Content\easyui\themes\bootstrap\accordion.css" />
+    <Content Include="Content\easyui\themes\bootstrap\calendar.css" />
+    <Content Include="Content\easyui\themes\bootstrap\combo.css" />
+    <Content Include="Content\easyui\themes\bootstrap\combobox.css" />
+    <Content Include="Content\easyui\themes\bootstrap\datagrid.css" />
+    <Content Include="Content\easyui\themes\bootstrap\datebox.css" />
+    <Content Include="Content\easyui\themes\bootstrap\dialog.css" />
+    <Content Include="Content\easyui\themes\bootstrap\easyui.css" />
+    <Content Include="Content\easyui\themes\bootstrap\images\accordion_arrows.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\blank.gif" />
+    <Content Include="Content\easyui\themes\bootstrap\images\calendar_arrows.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\combo_arrow.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\datagrid_icons.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\datebox_arrow.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\layout_arrows.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\linkbutton_bg.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\loading.gif" />
+    <Content Include="Content\easyui\themes\bootstrap\images\menu_arrows.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\messager_icons.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\pagination_icons.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\panel_tools.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\searchbox_button.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\slider_handle.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\spinner_arrows.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\tabs_icons.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\tree_icons.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\validatebox_arrows.png" />
+    <Content Include="Content\easyui\themes\bootstrap\images\validatebox_warning.png" />
+    <Content Include="Content\easyui\themes\bootstrap\layout.css" />
+    <Content Include="Content\easyui\themes\bootstrap\linkbutton.css" />
+    <Content Include="Content\easyui\themes\bootstrap\menu.css" />
+    <Content Include="Content\easyui\themes\bootstrap\menubutton.css" />
+    <Content Include="Content\easyui\themes\bootstrap\messager.css" />
+    <Content Include="Content\easyui\themes\bootstrap\pagination.css" />
+    <Content Include="Content\easyui\themes\bootstrap\panel.css" />
+    <Content Include="Content\easyui\themes\bootstrap\progressbar.css" />
+    <Content Include="Content\easyui\themes\bootstrap\propertygrid.css" />
+    <Content Include="Content\easyui\themes\bootstrap\searchbox.css" />
+    <Content Include="Content\easyui\themes\bootstrap\slider.css" />
+    <Content Include="Content\easyui\themes\bootstrap\spinner.css" />
+    <Content Include="Content\easyui\themes\bootstrap\splitbutton.css" />
+    <Content Include="Content\easyui\themes\bootstrap\tabs.css" />
+    <Content Include="Content\easyui\themes\bootstrap\tree.css" />
+    <Content Include="Content\easyui\themes\bootstrap\validatebox.css" />
+    <Content Include="Content\easyui\themes\bootstrap\window.css" />
+    <Content Include="Content\easyui\themes\default\accordion.css" />
+    <Content Include="Content\easyui\themes\default\calendar.css" />
+    <Content Include="Content\easyui\themes\default\combo.css" />
+    <Content Include="Content\easyui\themes\default\combobox.css" />
+    <Content Include="Content\easyui\themes\default\datagrid.css" />
+    <Content Include="Content\easyui\themes\default\datebox.css" />
+    <Content Include="Content\easyui\themes\default\dialog.css" />
+    <Content Include="Content\easyui\themes\default\easyui.css" />
+    <Content Include="Content\easyui\themes\default\images\accordion_arrows.png" />
+    <Content Include="Content\easyui\themes\default\images\blank.gif" />
+    <Content Include="Content\easyui\themes\default\images\calendar_arrows.png" />
+    <Content Include="Content\easyui\themes\default\images\combo_arrow.png" />
+    <Content Include="Content\easyui\themes\default\images\datagrid_icons.png" />
+    <Content Include="Content\easyui\themes\default\images\datebox_arrow.png" />
+    <Content Include="Content\easyui\themes\default\images\layout_arrows.png" />
+    <Content Include="Content\easyui\themes\default\images\linkbutton_bg.png" />
+    <Content Include="Content\easyui\themes\default\images\loading.gif" />
+    <Content Include="Content\easyui\themes\default\images\menu_arrows.png" />
+    <Content Include="Content\easyui\themes\default\images\messager_icons.png" />
+    <Content Include="Content\easyui\themes\default\images\pagination_icons.png" />
+    <Content Include="Content\easyui\themes\default\images\panel_tools.png" />
+    <Content Include="Content\easyui\themes\default\images\searchbox_button.png" />
+    <Content Include="Content\easyui\themes\default\images\slider_handle.png" />
+    <Content Include="Content\easyui\themes\default\images\spinner_arrows.png" />
+    <Content Include="Content\easyui\themes\default\images\tabs_icons.png" />
+    <Content Include="Content\easyui\themes\default\images\tree_icons.png" />
+    <Content Include="Content\easyui\themes\default\images\validatebox_arrows.png" />
+    <Content Include="Content\easyui\themes\default\images\validatebox_warning.png" />
+    <Content Include="Content\easyui\themes\default\layout.css" />
+    <Content Include="Content\easyui\themes\default\linkbutton.css" />
+    <Content Include="Content\easyui\themes\default\menu.css" />
+    <Content Include="Content\easyui\themes\default\menubutton.css" />
+    <Content Include="Content\easyui\themes\default\messager.css" />
+    <Content Include="Content\easyui\themes\default\pagination.css" />
+    <Content Include="Content\easyui\themes\default\panel.css" />
+    <Content Include="Content\easyui\themes\default\progressbar.css" />
+    <Content Include="Content\easyui\themes\default\propertygrid.css" />
+    <Content Include="Content\easyui\themes\default\searchbox.css" />
+    <Content Include="Content\easyui\themes\default\slider.css" />
+    <Content Include="Content\easyui\themes\default\spinner.css" />
+    <Content Include="Content\easyui\themes\default\splitbutton.css" />
+    <Content Include="Content\easyui\themes\default\tabs.css" />
+    <Content Include="Content\easyui\themes\default\tree.css" />
+    <Content Include="Content\easyui\themes\default\validatebox.css" />
+    <Content Include="Content\easyui\themes\default\window.css" />
+    <Content Include="Content\easyui\themes\gray\accordion.css" />
+    <Content Include="Content\easyui\themes\gray\calendar.css" />
+    <Content Include="Content\easyui\themes\gray\combo.css" />
+    <Content Include="Content\easyui\themes\gray\combobox.css" />
+    <Content Include="Content\easyui\themes\gray\datagrid.css" />
+    <Content Include="Content\easyui\themes\gray\datebox.css" />
+    <Content Include="Content\easyui\themes\gray\dialog.css" />
+    <Content Include="Content\easyui\themes\gray\easyui.css" />
+    <Content Include="Content\easyui\themes\gray\images\accordion_arrows.png" />
+    <Content Include="Content\easyui\themes\gray\images\blank.gif" />
+    <Content Include="Content\easyui\themes\gray\images\calendar_arrows.png" />
+    <Content Include="Content\easyui\themes\gray\images\combo_arrow.png" />
+    <Content Include="Content\easyui\themes\gray\images\datagrid_icons.png" />
+    <Content Include="Content\easyui\themes\gray\images\datebox_arrow.png" />
+    <Content Include="Content\easyui\themes\gray\images\layout_arrows.png" />
+    <Content Include="Content\easyui\themes\gray\images\linkbutton_bg.png" />
+    <Content Include="Content\easyui\themes\gray\images\loading.gif" />
+    <Content Include="Content\easyui\themes\gray\images\menu_arrows.png" />
+    <Content Include="Content\easyui\themes\gray\images\messager_icons.png" />
+    <Content Include="Content\easyui\themes\gray\images\pagination_icons.png" />
+    <Content Include="Content\easyui\themes\gray\images\panel_tools.png" />
+    <Content Include="Content\easyui\themes\gray\images\searchbox_button.png" />
+    <Content Include="Content\easyui\themes\gray\images\slider_handle.png" />
+    <Content Include="Content\easyui\themes\gray\images\spinner_arrows.png" />
+    <Content Include="Content\easyui\themes\gray\images\tabs_icons.png" />
+    <Content Include="Content\easyui\themes\gray\images\tree_icons.png" />
+    <Content Include="Content\easyui\themes\gray\images\validatebox_arrows.png" />
+    <Content Include="Content\easyui\themes\gray\images\validatebox_warning.png" />
+    <Content Include="Content\easyui\themes\gray\layout.css" />
+    <Content Include="Content\easyui\themes\gray\linkbutton.css" />
+    <Content Include="Content\easyui\themes\gray\menu.css" />
+    <Content Include="Content\easyui\themes\gray\menubutton.css" />
+    <Content Include="Content\easyui\themes\gray\messager.css" />
+    <Content Include="Content\easyui\themes\gray\pagination.css" />
+    <Content Include="Content\easyui\themes\gray\panel.css" />
+    <Content Include="Content\easyui\themes\gray\progressbar.css" />
+    <Content Include="Content\easyui\themes\gray\propertygrid.css" />
+    <Content Include="Content\easyui\themes\gray\searchbox.css" />
+    <Content Include="Content\easyui\themes\gray\slider.css" />
+    <Content Include="Content\easyui\themes\gray\spinner.css" />
+    <Content Include="Content\easyui\themes\gray\splitbutton.css" />
+    <Content Include="Content\easyui\themes\gray\tabs.css" />
+    <Content Include="Content\easyui\themes\gray\tree.css" />
+    <Content Include="Content\easyui\themes\gray\validatebox.css" />
+    <Content Include="Content\easyui\themes\gray\window.css" />
+    <Content Include="Content\easyui\themes\icon.css" />
+    <Content Include="Content\easyui\themes\icons\accept.png" />
+    <Content Include="Content\easyui\themes\icons\add.png" />
+    <Content Include="Content\easyui\themes\icons\application_cascade.png" />
+    <Content Include="Content\easyui\themes\icons\application_home.png" />
+    <Content Include="Content\easyui\themes\icons\back.png" />
+    <Content Include="Content\easyui\themes\icons\blank.gif" />
+    <Content Include="Content\easyui\themes\icons\book.png" />
+    <Content Include="Content\easyui\themes\icons\cancel.png" />
+    <Content Include="Content\easyui\themes\icons\chart_bar.png" />
+    <Content Include="Content\easyui\themes\icons\cog.png" />
+    <Content Include="Content\easyui\themes\icons\computer.png" />
+    <Content Include="Content\easyui\themes\icons\cross.png" />
+    <Content Include="Content\easyui\themes\icons\cut.png" />
+    <Content Include="Content\easyui\themes\icons\date.png" />
+    <Content Include="Content\easyui\themes\icons\delete.png" />
+    <Content Include="Content\easyui\themes\icons\disk.png" />
+    <Content Include="Content\easyui\themes\icons\door_out.png" />
+    <Content Include="Content\easyui\themes\icons\edit_add.png" />
+    <Content Include="Content\easyui\themes\icons\edit_remove.png" />
+    <Content Include="Content\easyui\themes\icons\filesave.png" />
+    <Content Include="Content\easyui\themes\icons\help.png" />
+    <Content Include="Content\easyui\themes\icons\information.png" />
+    <Content Include="Content\easyui\themes\icons\mini_add.png" />
+    <Content Include="Content\easyui\themes\icons\mini_edit.png" />
+    <Content Include="Content\easyui\themes\icons\mini_refresh.png" />
+    <Content Include="Content\easyui\themes\icons\no.png" />
+    <Content Include="Content\easyui\themes\icons\note.png" />
+    <Content Include="Content\easyui\themes\icons\ok.png" />
+    <Content Include="Content\easyui\themes\icons\page.png" />
+    <Content Include="Content\easyui\themes\icons\page_add.png" />
+    <Content Include="Content\easyui\themes\icons\page_delete.png" />
+    <Content Include="Content\easyui\themes\icons\page_edit.png" />
+    <Content Include="Content\easyui\themes\icons\page_paste.png" />
+    <Content Include="Content\easyui\themes\icons\page_white_gear.png" />
+    <Content Include="Content\easyui\themes\icons\pencil.png" />
+    <Content Include="Content\easyui\themes\icons\pencil_green.png" />
+    <Content Include="Content\easyui\themes\icons\photo.png" />
+    <Content Include="Content\easyui\themes\icons\print.png" />
+    <Content Include="Content\easyui\themes\icons\redo.png" />
+    <Content Include="Content\easyui\themes\icons\reload.png" />
+    <Content Include="Content\easyui\themes\icons\report_edit.png" />
+    <Content Include="Content\easyui\themes\icons\search.png" />
+    <Content Include="Content\easyui\themes\icons\sum.png" />
+    <Content Include="Content\easyui\themes\icons\tip.png" />
+    <Content Include="Content\easyui\themes\icons\undo.png" />
+    <Content Include="Content\easyui\themes\icons\user_edit.png" />
+    <Content Include="Content\easyui\themes\icons\user_gray.png" />
+    <Content Include="Content\easyui\themes\metro\accordion.css" />
+    <Content Include="Content\easyui\themes\metro\calendar.css" />
+    <Content Include="Content\easyui\themes\metro\combo.css" />
+    <Content Include="Content\easyui\themes\metro\combobox.css" />
+    <Content Include="Content\easyui\themes\metro\datagrid.css" />
+    <Content Include="Content\easyui\themes\metro\datebox.css" />
+    <Content Include="Content\easyui\themes\metro\dialog.css" />
+    <Content Include="Content\easyui\themes\metro\easyui.css" />
+    <Content Include="Content\easyui\themes\metro\images\accordion_arrows.png" />
+    <Content Include="Content\easyui\themes\metro\images\blank.gif" />
+    <Content Include="Content\easyui\themes\metro\images\calendar_arrows.png" />
+    <Content Include="Content\easyui\themes\metro\images\combo_arrow.png" />
+    <Content Include="Content\easyui\themes\metro\images\datagrid_icons.png" />
+    <Content Include="Content\easyui\themes\metro\images\datebox_arrow.png" />
+    <Content Include="Content\easyui\themes\metro\images\layout_arrows.png" />
+    <Content Include="Content\easyui\themes\metro\images\linkbutton_bg.png" />
+    <Content Include="Content\easyui\themes\metro\images\loading.gif" />
+    <Content Include="Content\easyui\themes\metro\images\menu_arrows.png" />
+    <Content Include="Content\easyui\themes\metro\images\messager_icons.png" />
+    <Content Include="Content\easyui\themes\metro\images\pagination_icons.png" />
+    <Content Include="Content\easyui\themes\metro\images\panel_tools.png" />
+    <Content Include="Content\easyui\themes\metro\images\searchbox_button.png" />
+    <Content Include="Content\easyui\themes\metro\images\slider_handle.png" />
+    <Content Include="Content\easyui\themes\metro\images\spinner_arrows.png" />
+    <Content Include="Content\easyui\themes\metro\images\tabs_icons.png" />
+    <Content Include="Content\easyui\themes\metro\images\tree_icons.png" />
+    <Content Include="Content\easyui\themes\metro\images\validatebox_arrows.png" />
+    <Content Include="Content\easyui\themes\metro\images\validatebox_warning.png" />
+    <Content Include="Content\easyui\themes\metro\layout.css" />
+    <Content Include="Content\easyui\themes\metro\linkbutton.css" />
+    <Content Include="Content\easyui\themes\metro\menu.css" />
+    <Content Include="Content\easyui\themes\metro\menubutton.css" />
+    <Content Include="Content\easyui\themes\metro\messager.css" />
+    <Content Include="Content\easyui\themes\metro\pagination.css" />
+    <Content Include="Content\easyui\themes\metro\panel.css" />
+    <Content Include="Content\easyui\themes\metro\progressbar.css" />
+    <Content Include="Content\easyui\themes\metro\propertygrid.css" />
+    <Content Include="Content\easyui\themes\metro\searchbox.css" />
+    <Content Include="Content\easyui\themes\metro\slider.css" />
+    <Content Include="Content\easyui\themes\metro\spinner.css" />
+    <Content Include="Content\easyui\themes\metro\splitbutton.css" />
+    <Content Include="Content\easyui\themes\metro\tabs.css" />
+    <Content Include="Content\easyui\themes\metro\tree.css" />
+    <Content Include="Content\easyui\themes\metro\validatebox.css" />
+    <Content Include="Content\easyui\themes\metro\window.css" />
+    <Content Include="Content\qTip2\basic.css" />
+    <Content Include="Content\qTip2\core.css" />
+    <Content Include="Content\qTip2\core.js" />
+    <Content Include="Content\qTip2\css3.css" />
+    <Content Include="Content\qTip2\ie6\ie6.css" />
+    <Content Include="Content\qTip2\ie6\ie6.js" />
+    <Content Include="Content\qTip2\intro.js" />
+    <Content Include="Content\qTip2\modal\modal.css" />
+    <Content Include="Content\qTip2\modal\modal.js" />
+    <Content Include="Content\qTip2\outro.js" />
+    <Content Include="Content\qTip2\position\imagemap.js" />
+    <Content Include="Content\qTip2\position\polys.js" />
+    <Content Include="Content\qTip2\position\svg.js" />
+    <Content Include="Content\qTip2\position\viewport.js" />
+    <Content Include="Content\qTip2\tips\jquery.qtip.min.css" />
+    <Content Include="Content\qTip2\tips\jquery.qtip.min.js" />
+    <Content Include="Content\qTip2\tips\jquery.qtip.nightly.min.css" />
+    <Content Include="Content\qTip2\tips\jquery.qtip.nightly.min.js" />
+    <Content Include="Content\qTip2\tips\tips.css" />
+    <Content Include="Content\qTip2\tips\tips.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\easyui\demo\accordion\datagrid_data1.json" />
+    <Content Include="Content\easyui\demo\combobox\combobox_data1.json" />
+    <Content Include="Content\easyui\demo\combogrid\datagrid_data1.json" />
+    <Content Include="Content\easyui\demo\combotree\tree_data1.json" />
+    <Content Include="Content\easyui\demo\datagrid\datagrid_data1.json" />
+    <Content Include="Content\easyui\demo\datagrid\datagrid_data2.json" />
+    <Content Include="Content\easyui\demo\datagrid\products.json" />
+    <Content Include="Content\easyui\demo\form\form_data1.json" />
+    <Content Include="Content\easyui\demo\layout\datagrid_data1.json" />
+    <Content Include="Content\easyui\demo\layout\propertygrid_data1.json" />
+    <Content Include="Content\easyui\demo\layout\tree_data1.json" />
+    <Content Include="Content\easyui\demo\propertygrid\propertygrid_data1.json" />
+    <Content Include="Content\easyui\demo\tabs\tree_data1.json" />
+    <Content Include="Content\easyui\demo\treegrid\treegrid_data1.json" />
+    <Content Include="Content\easyui\demo\treegrid\treegrid_data2.json" />
+    <Content Include="Content\easyui\demo\treegrid\treegrid_data3.json" />
+    <Content Include="Content\easyui\demo\tree\tree_data1.json" />
+    <Content Include="Content\easyui\demo\tree\tree_data2.json" />
+    <Content Include="Content\easyui\themes\black\images\Thumbs.db" />
+    <Content Include="Content\easyui\themes\bootstrap\images\Thumbs.db" />
+    <Content Include="Content\easyui\themes\default\images\Thumbs.db" />
+    <Content Include="Content\easyui\themes\gray\images\Thumbs.db" />
+    <Content Include="Content\easyui\themes\metro\images\Thumbs.db" />
+    <Content Include="Json\gallery.json" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:37127/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

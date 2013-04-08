@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    <style>
+        .wrapper {
+            width: 990px;
+            margin: 0 auto ;
+            height:60px;
+        }
+        header {
+            background-color:#1f9738;
+        }
+    </style>
+     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kessy")
+</head>
+<body>
+    <header >
+        <div class="wrapper">
+            <div class="ui-grid-row ">
+                <div class="ui-grid-5"  >lOGO</div>
+                <div class="ui-grid-20">
+                    <nav > 
+                        <ul>
+                            <li>
+                                <a href="Http://www.baidu.com">百度</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    @RenderBody()
+
+   
+    @RenderSection("scripts", required: false)
+</body>
+</html>
