@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>管理首页</title>
+    @Styles.Render("~/Content/esyui/themes")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kessy")
+    @Scripts.Render("~/bundles/easyui")
+     
+     <script type="text/javascript">
+         $(function () {
+             //增加tab页
+             $(".menuLink").click(function () {
+                 var $this = $(this);
+                 var nd = { text: $this.text(), attributes: { url: $this.attr("href") } };
+                 $.addTab(nd, centerTabs);
+                 return false;
+             });
+             var centerTabs = $('#centerTabs').tabs({
+                 fit: true,
+                 border: false
+             });
+         });
+    </script>
+    <style type="text/css" >
+        
+        .op-memu {
+            text-align:center;
+        }
+            .op-memu p {
+                margin:8px auto;
+            }
+    </style>  
+</head>
+<body  class="easyui-layout"  >
+		<div region="north"  style="height:70px;background-color:#f0f0f0;">
+            <div style="position:relative; height:70px;">
+                <div style="position:absolute; right:30px;bottom:5px;">
+                      <p><a class="easyui-linkbutton" href="#" data-options="iconCls:'icon-door_out'">退出</a></p>
+                </div>
+            </div>
+            
+		</div>
+		<div region="south"  style="height:40px;" ></div>
+		<div region="east" data-options="iconCls:'icon-reload',title:'关于',split:true,collapsed:true" style="width:180px;"></div>
+		<div region="west" split="true" title="控制面板" style="width:190px;">
+            <div id="p" class="easyui-panel"   style="  padding:10px;background:#fafafa;" data-options="noheader: true">
+		        <p>管理员：夏千祥</p>
+		        <p>身份：管理员</p>
+                <p><a class="easyui-linkbutton menuLink" href="#" data-options="iconCls:'icon-user_edit'">修改密码</a></p>
+	        </div>
+            <div   class="easyui-panel" title="内容管理" style=" padding:10px;background:#fbfbfb;" data-options="iconCls:'icon-cog'">
+		        <div class="op-memu" >
+                    <p ><a class="easyui-linkbutton menuLink" href="news.aspx" data-options="iconCls:'icon-report_edit'" >景点管理</a></p>
+                    <p ><a class="easyui-linkbutton menuLink"  href="of.aspx" data-options="iconCls:'icon-note'">推介管理</a></p>
+                    <p ><a class="easyui-linkbutton menuLink"  data-options="iconCls:'icon-chart_bar'" >游记管理</a></p
+                    <p ><a class="easyui-linkbutton menuLink"  data-options="iconCls:'icon-chart_bar'" >锦囊管理</a></p>
+                     <p ><a class="easyui-linkbutton menuLink"  data-options="iconCls:'icon-chart_bar'" >问答管理</a></p>
+                     <p ><a class="easyui-linkbutton menuLink"  data-options="iconCls:'icon-chart_bar'" >会员管理</a></p>
+		        </div>
+                     
+	        </div>
+           
+		</div>
+		<div region="center" >
+            <div id="centerTabs">
+                <div title="管理首页" style="padding:10px; ">                   
+                    
+		        </div>                
+            </div>
+		</div>
+    
+</body>
+</html>

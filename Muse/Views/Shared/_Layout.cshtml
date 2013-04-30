@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/themes/base/css")
     <style>
-        .wrapper {
+        .head-wrapper {
             width: 990px;
             margin: 0 auto ;
             height:60px;
@@ -15,23 +15,77 @@
         header {
             background-color:#1f9738;
         }
+        a.logo-font {
+            font-size:36px;
+            color:#f0f0f0;text-decoration: none;
+            font-family:'微软雅黑','黑体';
+        }
+        .sr-nav-wrapper {
+            position:relative;
+            height:60px;
+        }
+        .sr-nav {
+            position:absolute;
+            bottom:5px;
+        }
+            .sr-nav ul { 
+                overflow:hidden;
+                zoom:1;
+            }
+            .sr-nav ul li {
+                float:left;
+            }
+            .sr-nav ul li a {
+                display:block;
+                font-size:24px;
+                color:#fdfdfd;
+                margin:0px 10px;
+                border-bottom:3px solid #1f9738;text-decoration: none;
+            }.sr-nav ul li a:hover { 
+                border-bottom:3px solid #f16f1a;
+            }
+        .sr-nav ul li a.sr-nav-sle {
+             border-bottom:3px solid #f16f1a;
+        }
+        .sr-foot {
+            background:#585050;
+            height:120px;
+        }
+        .foot-wrapper {
+            width:990px;
+            margin:10px auto;
+        }
     </style>
      @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/kessy")
 </head>
 <body>
     <header >
-        <div class="wrapper">
+        <div class="head-wrapper">
             <div class="ui-grid-row ">
-                <div class="ui-grid-5"  >lOGO</div>
-                <div class="ui-grid-20">
-                    <nav > 
-                        <ul>
-                            <li>
-                                <a href="Http://www.baidu.com">百度</a>
+                <div class="ui-grid-5" ><a href="/" class="logo-font">爱游游</a></div>
+                <div class="ui-grid-20 sr-nav-wrapper"> 
+                    <div class="sr-nav">
+                        <ul><li>
+                                <a href="Http://www.baidu.com" class="sr-nav-sle">首页</a>
                             </li>
-                        </ul>
-                    </nav>
+                            <li>
+                                <a href="Http://www.baidu.com">景点</a>
+                            </li>
+                             <li>
+                                <a href="Http://www.baidu.com">推介</a>
+                            </li>
+                            <li>
+                                <a href="Http://www.baidu.com">游记</a>
+                            </li>
+                             <li>
+                                <a href="Http://www.baidu.com">锦囊</a>
+                            </li>
+                             <li>
+                                <a href="Http://www.baidu.com">问答</a>
+                            </li>
+                        </ul> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,5 +95,15 @@
 
    
     @RenderSection("scripts", required: false)
+    <div class="sr-foot" >
+        <div class="foot-wrapper">
+           <div class="ui-grid-row ">
+               <div class="ui-grid-4">4</div>
+               <div class="ui-grid-6">6</div>
+               <div class="ui-grid-8">8</div>
+               <div class="ui-grid-7">7</div>
+           </div>
+       </div>
+    </div>
 </body>
 </html>

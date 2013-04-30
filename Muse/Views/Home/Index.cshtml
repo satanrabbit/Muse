@@ -1,48 +1,449 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "测试首页";
 }
 
-<div class="demo">
-     <style>
-         .demo-wrap {
-             position: relative;
-             margin-top: 20px;
-             height: 110px;
-         }
-         #demo-txt {
-             position: absolute;
-             left: 400px;
-             top: 0;
-             color:#333333;
-             font: normal 26px/2 Futura,"Century Gothic",AppleGothic,sans-serif;
-             opacity: 0;
-             filter: alpha(opacity=0);
-         }
-         #demo-img {
-             position: absolute;
-             left: 0;
-             top: 0;
-         }
-     </style>
+<link href="~/Content/jquery.slideViewerPro.1.5/svwp_style.css" rel="stylesheet" />
+<script src="~/Content/jquery.slideViewerPro.1.5/jquery.slideViewerPro.1.5.js"></script>
+<script src="~/Content/jquery.slideViewerPro.1.5/jquery.timers.js"></script>
+<style>
+    .body-wrapper {
+        width:990px;        
+        margin: 0 auto ;
+    }
+    .side-area ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .side-area a {
+        font-size: 14px;
+        display: block;
+        padding: 8px 15px;
+        border: 1px solid #ddd;
+        border-bottom: none;
+        position: relative;
+        text-shadow: 0 1px 2px #eee;
+        color: #7CAE23;
+        }
+    .side-area .side-highlight a {
+        background: #FBFFD7;
+        text-shadow: none;
+        font-weight: bold;
+        transition: background-color 0.8s ease-out;
+    }
+    .sr-box {
+        border: 1px none #ccc;
+        zoom: 1;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        border-bottom: 0;
+    }
 
-     <button type="button" id="demo-btn" autocomplete="off">Click Me!</button>
-     <div class="demo-wrap">
-         <img id="demo-img" src="http://docs.kissyui.com/logo/logo.png" />
-         <h2 id="demo-txt">Hello KISSY, NOT KITTY!</h2>
-     </div>
-<script type="text/javascript">
- KISSY.use('dom,event,anim',function(S,DOM,Event,Anim){
-     S.ready(function(){
-         var btn = DOM.get('#demo-btn');
+    .sr-box-head {
+        border-bottom: 2px solid #0dd404;
+        position: relative;
+    }
+        .sr-box-head .sr-box-head-title {
+            color: #0c8207;
+            font-size: 14px;
+            font-weight: 700;
+            float: left;
+            display: inline;
+            margin: 0;
+            padding: 0;
+       }
+    .sr-box-light, .sr-box-light .sr-box-head {
+        border-color: #7CAE23;
+    }
+    .sr-box-head-border {
+        border: 1px solid #fff;
+        height: 14px;
+        line-height: 16px;
+        overflow: hidden;
+        padding: 10px;
+        /*background: -webkit-gradient(linear,left top,left bottom,from( #fcfcfc),to( #f1f1f1));
+        background: -moz-linear-gradient(top, #fcfcfc, #f1f1f1);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f1f1f1');
+        background: -o-linear-gradient(top, #fcfcfc, #f1f1f1);
+        background: linear-gradient(top, #fcfcfc, #f1f1f1);*/
+    }
+    .sr-box-light .sr-box-head-border {
+        border: 0;
+        height: 16px;
+        /*background: -webkit-gradient(linear,left top,left bottom,from( #fcfcfc),to( #f9f9f9));
+        background: -moz-linear-gradient(top, #fcfcfc, #f9f9f9);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f9f9f9');
+        background: -o-linear-gradient(top, #fcfcfc, #f9f9f9);
+        background: linear-gradient(top, #fcfcfc, #f9f9f9);*/
+        zoom: 1;
+    }
+    .sr-box-container {
+        background: #fff;
+        border-bottom: 1px none #ccc;
+        }
+    .sr-img-box {
+        margin:10px auto;
+       
+    }
+    .sr-img-item{
+        border:1px solid #ededed; overflow:auto;
+        zoom:1;
+    }
+    .sr-img-file {
+        float:left;
+        margin:10px 0 0 10px;
+    }
+    .sr-img-file img{
+        width:282px;height:160px;
+        border:4px solid #dfdfdf;
+        border-radius: 10px;
+    }
+    .sr-img-intro {
+        float:left;
+        width:360px;
+        
+        margin:10px 0 0 20px;
+    }
+    .sr-img-intro-head {
+        position: relative;border-bottom: 2px solid #ccc;
+    }
+    .sr-img-intro-head-title {
+        line-height:28px;
+    }
+    .sr-img-intro-head-title a {
+        font-size:16px;
+        color:#0073b6;
+    }
+    .sr-img-intro-content ,.sr-discuss-item-content {
+        padding: 10px;
+        font-size:13px;
+        line-height:22px;
+    }
+    .sr-discuss {
+        margin:10px;
+    }
+    .sr-discuss-item {
+        border-bottom:2px solid #ddd;
+        padding:0px 0 10px;
+    }
+    .sr-discuss-item-title a{
+        font-size:15px;
+        line-height:28px;
+        color:#0073b6;
+    }
+    .sr-discuss-item-subtitle {
+        color:#777;
+    }
+</style>
+<div class="body-wrapper">
+    <div class="ui-grid-row ">
+        <div class="ui-grid-25" >
+            <div class="ui-grid-row ">
+                 <div class="ui-grid-8" > 
+                  <div class="ui-box ui-box-light">
+                        <div class="ui-box-head">
+                            <div class="ui-box-head-border">
+                                <h3 class="ui-box-head-title">本期推介</h3>
+                                <span class="ui-box-head-text">戈壁滩</span> 
+                            </div>
+                        </div>
+                        <div class="ui-box-container">
+                            <div  class="ui-box-content">
+                                &emsp;&emsp;对于过去的十五年天天都在windows操作系统下工作的我们来说，这个想法可能又使我们回到一个好的、老的基于命令行的界面，看起来好像是稍微有点原始，但是尽管如此，对于大多数的服务器管理员来说是必要的。第一个准备工作是下载和安装一个ssh客户端，这时一个网络协议，通过这个协议，能够使两个设备进行安全的通信，安全的保证在于交换的数据是加密的。他的作用是显而易见的，就是用于连接系统的shell。
+                            </div>
+                            <div class="side-area" >
+                                <ul>
+                                    <li class=""> <a href="#">景点概况</a></li>
+                                    <li  > <a href="#">最佳时间</a></li>
+                                    <li> <a href="#">交通与线路</a></li>
+                                    <li > <a href="#">天气情况</a></li>
+                                    <li > <a href="#">旅行花费</a></li> 
+                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                    
+                 </div>
+                <div class="ui-grid-17"  >
+                   <div id="my-folio-of-works"  class="svwp">
+                            <ul>
+                                <li><img alt="Meander - P.J. Onori"  src="/content/images/1.jpg" width="700" height="350" /></li>
+                                <li><img alt="Flock and Predator - L. Ongaro"  src="/content/images/2.jpg" width="700"  height="350"  /></li>
+                                <li><img alt="Empathy - K. McDonald"  src="/content/images/3.jpg" width="700" height="350"  /></li>
+                                <li><img alt="DIY 3D Scanner - K. McDonald"  src="/content/images/4.jpg" width="700" height="350"  /></li>
+                                <li><img alt="DIY 3D Scanner - K. Scanner - K. McDonaldDIY 3D Scanner - K. McDonaldDIY 3D Scanner - K. McDonaldDIY 3D Scanner - K. McDonaldDIY 3D Scanner - K. McDonald"  src="/content/images/5.jpg" width="700" height="350"  /></li>
+                                <li><img alt="DIY 3D Scanner - K. McDonald"  src="/content/images/4.jpg" width="700" height="350"  /></li>
+                                <li><img alt="DIY 3D Scanner - K. McDonald"  src="/content/images/3.jpg" width="700" height="350"  /></li>
+                                <li><img alt="DIY 3D Scanner - K. McDonald"  src="/content/images/2.jpg" width="700" height="350"  /></li>
+                                <li><img alt="DIY 3D Scanner - K. McDonald"  src="/content/images/5.jpg" width="700" height="350"  /></li>
+                                <!--eccetera-->
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-grid-25" > 
+            <div class="ui-grid-row">
+                <div class="ui-grid-18">
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-18">
+                             <div class="sr-box sr-box-light">
+                                <div class="sr-box-head">
+                                    <div class="sr-box-head-border">
+                                        <h3 class="sr-box-head-title">景点</h3>
+                                    </div>
+                                </div>
+                                <div class="sr-box-container">
+                                    <div  class="sr-box-content">
+                                        <div class="sr-img-box">
+                                            <div class="sr-img-item">
+                                                <div class="sr-img-file ">
+                                                    <a href="#"><img src="~/Content/images/1.jpg" alt="新疆美图"   /></a>
+                                                </div>
+                                                <div class="sr-img-intro">
+                                                    <div class="sr-img-intro-head">
+                                                        <h3 class="sr-img-intro-head-title"><a href="#">深入亚非400日，图文讲述各国故事（未完）</a></h3>
+                                                    </div>
+                                                    <div class="sr-img-intro-content">
+                                                        <p>  
+                                                            &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+  
+                                                           “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。
+  
+                                                            “不 ，我不喜欢这个国家。”他不假思索地回答：“你知道吗，索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sr-img-item">
+                                                <div class="sr-img-file ">
+                                                    <a href="#"><img src="~/Content/images/2.jpg" alt="新疆美图"   /></a>
+                                                </div>
+                                                <div class="sr-img-intro">
+                                                    <div class="sr-img-intro-head">
+                                                        <h3 class="sr-img-intro-head-title"><a href="#">深入亚非400日，图文讲述各国故事（未完）</a></h3>
+                                                    </div>
+                                                    <div class="sr-img-intro-content">
+                                                        <p>  
+                                                            &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+  
+                                                           “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。
+  
+                                                            “不 ，我不喜欢这个国家。”他不假思索地回答：“你知道吗，索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sr-img-item">
+                                                <div class="sr-img-file ">
+                                                    <a href="#"><img src="~/Content/images/4.jpg" alt="新疆美图"   /></a>
+                                                </div>
+                                                <div class="sr-img-intro">
+                                                    <div class="sr-img-intro-head">
+                                                        <h3 class="sr-img-intro-head-title"><a href="#">深入亚非400日，图文讲述各国故事（未完）</a></h3>
+                                                    </div>
+                                                    <div class="sr-img-intro-content">
+                                                        <p>  
+                                                            &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+  
+                                                           “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。
+  
+                                                            “不 ，我不喜欢这个国家。”他不假思索地回答：“你知道吗，索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                             
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-18">
+                             <div class="sr-box sr-box-light">
+                                <div class="sr-box-head">
+                                    <div class="sr-box-head-border">
+                                        <h3 class="sr-box-head-title">游记</h3>
+                                    </div>
+                                </div>
+                                <div class="sr-box-container">
+                                    <div  class="sr-box-content">
+                                        <div class="sr-discuss">
+                                            <div class="sr-discuss-item">
+                                                <h4 class="sr-discuss-item-title"><a href="#">深入亚非400日，图文讲述各国故事</a></h4>
+                                                <div class="sr-discuss-item-subtitle">Author：<span>name</span>&emsp;&emsp;&emsp;时间：<span>2013年5月1日</span></div>
+                                                <div class="sr-discuss-item-content">
+                                                    <p> &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+  
+                                                           “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。
+  
+                                                            “不 ，我不喜欢这个国家。”他不假思索地回答：“你知道吗，索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    </p>
+                                                </div>
+                                            </div>
 
-         Event.on(btn, 'click', function() {
-             DOM.attr(btn, 'disabled', true);
+                                        </div>
+                                        <div class="sr-discuss">
+                                            <div class="sr-discuss-item">
+                                                <h4 class="sr-discuss-item-title"><a href="#">深入亚非400日，图文讲述各国故事</a></h4>
+                                                <div class="sr-discuss-item-subtitle">Author：<span>name</span>&emsp;&emsp;&emsp;时间：<span>2013年5月1日</span></div>
+                                                <div class="sr-discuss-item-content">
+                                                    <p> &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+  
+                                                           “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。
+  
+                                                            “不 ，我不喜欢这个国家。”他不假思索地回答：“你知道吗，索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    </p>
+                                                </div>
+                                            </div>
 
-             new Anim('#demo-img', 'left: 400px; opacity: 0', 2, 'easeOut', function() {
-                 new Anim('#demo-txt',
-                        'left: 0; opacity: 1; fontSize: 28px',
-                        2, 'bounceOut').run();
-             }).run();
-         });
-     });
- });</script>
+                                        </div><div class="sr-discuss">
+                                            <div class="sr-discuss-item">
+                                                <h4 class="sr-discuss-item-title"><a href="#">深入亚非400日，图文讲述各国故事</a></h4>
+                                                <div class="sr-discuss-item-subtitle">Author：<span>name</span>&emsp;&emsp;&emsp;时间：<span>2013年5月1日</span></div>
+                                                <div class="sr-discuss-item-content">
+                                                    <p> &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+  
+                                                           “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。
+  
+                                                            “不 ，我不喜欢这个国家。”他不假思索地回答：“你知道吗，索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    </p>
+                                                </div>
+                                            </div>
+
+                                        </div><div class="sr-discuss">
+                                            <div class="sr-discuss-item">
+                                                <h4 class="sr-discuss-item-title"><a href="#">深入亚非400日，图文讲述各国故事</a></h4>
+                                                <div class="sr-discuss-item-subtitle">Author：<span>name</span>&emsp;&emsp;&emsp;时间：<span>2013年5月1日</span></div>
+                                                <div class="sr-discuss-item-content">
+                                                    <p> &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+  
+                                                           “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。
+  
+                                                            “不 ，我不喜欢这个国家。”他不假思索地回答：“你知道吗，索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>  
+                                    </div>                             
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <div class="ui-grid-7">
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-7">
+                         <div class="sr-box sr-box-light">
+                            <div class="sr-box-head">
+                                <div class="sr-box-head-border">
+                                    <h3 class="sr-box-head-title">锦囊</h3>
+                                
+                                </div>
+                            </div>
+                            <div class="sr-box-container">
+                                <div  class="sr-box-content">
+                                    <ul class="ui-list">
+                                        <li class="ui-list-item"><a href="#">如何申请认证？</a></li>
+                                        <li class="ui-list-item"><a href="#">如何提现？</a></li>
+                                        <li class="ui-list-item"><a href="#">支付宝数字证书有什么作用？</a></li>
+                                        <li class="ui-list-item"><a href="#">如何申请认证？</a></li>
+                                         <li class="ui-list-item"><a href="#">如何提现？</a></li>
+                                        <li class="ui-list-item"><a href="#">支付宝数字证书有什么作用？</a></li>
+                                        <li class="ui-list-item"><a href="#">如何申请认证？</a></li>
+                                    </ul>
+                                </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ui-grid-row">
+                    <div class="ui-grid-7">
+                         <div class="ui-box ui-box-light">
+                            <div class="ui-box-head">
+                                <div class="ui-box-head-border">
+                                    <h3 class="ui-box-head-title">问答</h3>
+                                
+                                </div>
+                            </div>
+                            <div class="ui-box-container">
+                                <div  class="ui-box-content">
+                                   <div class="sr-discuss">
+                                            <div class="sr-discuss-item">
+                                                <h4 class="sr-discuss-item-title"><a href="#">深入亚非400日，图文讲述各国故事</a></h4>
+                                                <div class="sr-discuss-item-subtitle">Author：<span>name</span>&emsp;&emsp;&emsp;时间：<span>2013年5月1日</span></div>
+                                                <div class="sr-discuss-item-content">
+                                                    <p> &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天…… 
+    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    <div class="sr-discuss">
+                                            <div class="sr-discuss-item">
+                                                <h4 class="sr-discuss-item-title"><a href="#">深入亚非400日，图文讲述各国故事</a></h4>
+                                                <div class="sr-discuss-item-subtitle">Author：<span>name</span>&emsp;&emsp;&emsp;时间：<span>2013年5月1日</span></div>
+                                                <div class="sr-discuss-item-content">
+                                                    <p> &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天…… 
+    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    <div class="sr-discuss">
+                                            <div class="sr-discuss-item">
+                                                <h4 class="sr-discuss-item-title"><a href="#">深入亚非400日，图文讲述各国故事</a></h4>
+                                                <div class="sr-discuss-item-subtitle">Author：<span>name</span>&emsp;&emsp;&emsp;时间：<span>2013年5月1日</span></div>
+                                                <div class="sr-discuss-item-content">
+                                                    <p> &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天…… 
+    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    <div class="sr-discuss">
+                                            <div class="sr-discuss-item">
+                                                <h4 class="sr-discuss-item-title"><a href="#">深入亚非400日，图文讲述各国故事</a></h4>
+                                                <div class="sr-discuss-item-subtitle">Author：<span>name</span>&emsp;&emsp;&emsp;时间：<span>2013年5月1日</span></div>
+                                                <div class="sr-discuss-item-content">
+                                                    <p> &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天…… 
+    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+</div> <script type="text/javascript">
+        $(window).bind("load", function () {
+            $("div#my-folio-of-works").slideViewerPro({
+                thumbs: 7,
+                autoslide: true,
+                asTimer: 3500,
+                typo: true,
+                galBorderWidth: 0,
+                thumbsBorderOpacity: 0.8,
+                buttonsTextColor: "#707070",
+                buttonsWidth: 30,
+                thumbsActiveBorderOpacity: 0.8,
+                thumbsActiveBorderColor: "aqua",
+                shuffle: true
+            });
+        }); 
+    </script>
