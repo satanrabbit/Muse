@@ -1,0 +1,297 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>景点</title>
+    
+    @Styles.Render("~/Content/esyui/themes")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kessy")
+    @Scripts.Render("~/bundles/easyui")    
+    @Styles.Render("~/Content/css")
+    <script src="~/Scripts/jquery.masonry.min.js"></script>
+    <style type="text/css" >
+        .am-img-wrapper {
+            overflow:auto;
+            zoom:1;
+            margin-top:40px;
+        }
+        .am-img-box {
+            float:left;
+            width:330px;
+            margin:5px;
+        }
+        .h130 {
+            height:130px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var $container = $('.am-img-wrapper');
+            $container.imagesLoaded(function () {
+                $container.masonry({
+                    itemSelector: '.am-img-box' 
+                });
+            });
+
+        });
+</script>
+</head>
+<body>
+    <div>
+        <div  ><a class="easyui-linkbutton" href="javascript:; " data-options="iconCls:'icon-add'">添加景点</a></div>
+    </div>
+    <div class="am-img-wrapper">
+        <div class="am-img-box">
+            <div class="ui-box ui-box-light">
+                <div class="ui-box-head">
+                    <div class="ui-box-head-border">
+                        <h3 class="ui-box-head-title">浅色系其他文字</h3> 
+                        <a href="#" class="ui-box-head-more  easyui-linkbutton" data-options="plain:true,iconCls:'icon-cross'">删除</a>&emsp;<a href="#" class="ui-box-head-more easyui-linkbutton" data-options="plain:true,iconCls:'icon-report_edit'">修改</a>&emsp;<a href="#" class="ui-box-head-more easyui-linkbutton" data-options="plain:true,iconCls:'icon-photo'">预览</a>
+                    </div>
+                </div>
+                <div class="ui-box-container">
+                    <div class="ui-box-content">
+                        <div class="sr-img-item">
+                            <div class="sr-img-file ">
+                                <a href="#"><img src="~/Content/images/1.jpg" alt="新疆美图"   /></a>
+                            </div>
+                                                 
+                                <div class="sr-img-intro-content ">
+                                    <p>  
+                                        &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+  
+                                        “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。 
+                                    </p>
+                                </div>
+                                              
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+        <div class="am-img-box">
+            <div class="ui-box ui-box-light">
+                <div class="ui-box-head">
+                    <div class="ui-box-head-border">
+                        <h3 class="ui-box-head-title">浅色系</h3>
+                        <span class="ui-box-head-text">其他文字</span>
+                        <a href="#" class="ui-box-head-more">修改</a><a href="#" class="ui-box-head-more">删除</a>
+                    </div>
+                </div>
+                <div class="ui-box-container">
+                    <div class="ui-box-content">
+                        <div class="sr-img-item">
+                            <div class="sr-img-file ">
+                                <a href="#"><img src="~/Content/images/1.jpg" alt="新疆美图"   /></a>
+                            </div>
+                                                 
+                                <div class="sr-img-intro-content ">
+                                    <p>  
+                                        &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+   索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    
+                                    </p>
+                                </div>
+                                              
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+        <div class="am-img-box">
+            <div class="ui-box ui-box-light">
+                <div class="ui-box-head">
+                    <div class="ui-box-head-border">
+                        <h3 class="ui-box-head-title">浅色系</h3>
+                        <span class="ui-box-head-text">其他文字</span>
+                        <a href="#" class="ui-box-head-more">修改</a><a href="#" class="ui-box-head-more">删除</a>
+                    </div>
+                </div>
+                <div class="ui-box-container">
+                    <div class="ui-box-content">
+                        <div class="sr-img-item">
+                            <div class="sr-img-file ">
+                                <a href="#"><img src="~/Content/images/1.jpg" alt="新疆美图"   /></a>
+                            </div>
+                                                 
+                                <div class="sr-img-intro-content ">
+                                    <p>  
+                                        &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+   问其中一位孩子。
+  
+                                        “不 ，我不喜欢这个国家。”他不假思索地回答：“你知道吗，索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    
+                                    </p>
+                                </div>
+                                              
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+        <div class="am-img-box">
+            <div class="ui-box ">
+                <div class="ui-box-head">
+                    <div class="ui-box-head-border">
+                        <h3 class="ui-box-head-title">浅色系</h3>
+                        <span class="ui-box-head-text">其他文字</span>
+                        <a href="#" class="ui-box-head-more">修改</a><a href="#" class="ui-box-head-more">删除</a>
+                    </div>
+                </div>
+                <div class="ui-box-container">
+                    <div class="ui-box-content">
+                        <div class="sr-img-item">
+                            <div class="sr-img-file ">
+                                <a href="#"><img src="~/Content/images/1.jpg" alt="新疆美图"   /></a>
+                            </div>
+                                                 
+                                <div class="sr-img-intro-content ">
+                                    <p>  
+                                        &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+  
+                                        “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。
+   
+                                    </p>
+                                </div>
+                                              
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+        <div class="am-img-box">
+            <div class="ui-box ui-box-light">
+                <div class="ui-box-head">
+                    <div class="ui-box-head-border">
+                        <h3 class="ui-box-head-title">浅色系</h3>
+                        <span class="ui-box-head-text">其他文字</span>
+                        <a href="#" class="ui-box-head-more">修改</a><a href="#" class="ui-box-head-more">删除</a>
+                    </div>
+                </div>
+                <div class="ui-box-container">
+                    <div class="ui-box-content">
+                        <div class="sr-img-item">
+                            <div class="sr-img-file ">
+                                <a href="#"><img src="~/Content/images/1.jpg" alt="新疆美图"   /></a>
+                            </div>
+                                                 
+                                <div class="sr-img-intro-content ">
+                                    <p>  
+                                        &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔， 
+                                        “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。
+  
+                                        “不 ，我不喜欢这个国家。”他不假思索地回答：“你知道吗，索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    
+                                    </p>
+                                </div>
+                                              
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+        <div class="am-img-box">
+            <div class="ui-box ui-box-light">
+                <div class="ui-box-head">
+                    <div class="ui-box-head-border">
+                        <h3 class="ui-box-head-title">浅色系</h3>
+                        <span class="ui-box-head-text">其他文字</span>
+                        <a href="#" class="ui-box-head-more">修改</a><a href="#" class="ui-box-head-more">删除</a>
+                    </div>
+                </div>
+                <div class="ui-box-container">
+                    <div class="ui-box-content">
+                        <div class="sr-img-item">
+                            <div class="sr-img-file ">
+                                <a href="#"><img src="~/Content/images/1.jpg" alt="新疆美图"   /></a>
+                            </div>
+                                                 
+                                <div class="sr-img-intro-content ">
+                                    <p>  
+                                        &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+  
+                                        “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。
+  
+                                        “不 ，我不喜欢这个国家。”他不假思索地回答：“你知道吗，索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    
+                                    </p>
+                                </div>
+                                              
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+        <div class="am-img-box">
+            <div class="ui-box ui-box-light">
+                <div class="ui-box-head">
+                    <div class="ui-box-head-border">
+                        <h3 class="ui-box-head-title">浅色系</h3>
+                        <span class="ui-box-head-text">其他文字</span>
+                        <a href="#" class="ui-box-head-more">修改</a><a href="#" class="ui-box-head-more">删除</a>
+                    </div>
+                </div>
+                <div class="ui-box-container">
+                    <div class="ui-box-content">
+                        <div class="sr-img-item">
+                            <div class="sr-img-file ">
+                                <a href="#"><img src="~/Content/images/1.jpg" alt="新疆美图"   /></a>
+                            </div>
+                                                 
+                                <div class="sr-img-intro-content ">
+                                    <p>  
+                                        &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+  
+                                        “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。
+  
+                                        “不 ，我不喜欢这个国家。”他不假思索地回答：“你知道吗，索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    
+                                    </p>
+                                </div>
+                                              
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+        <div class="am-img-box">
+            <div class="ui-box ui-box-light">
+                <div class="ui-box-head">
+                    <div class="ui-box-head-border">
+                        <h3 class="ui-box-head-title">浅色系</h3>
+                        <span class="ui-box-head-text">其他文字</span>
+                        <a href="#" class="ui-box-head-more">修改</a><a href="#" class="ui-box-head-more">删除</a>
+                    </div>
+                </div>
+                <div class="ui-box-container">
+                    <div class="ui-box-content">
+                        <div class="sr-img-item">
+                            <div class="sr-img-file ">
+                                <a href="#"><img src="~/Content/images/1.jpg" alt="新疆美图"   /></a>
+                            </div>
+                                                 
+                                <div class="sr-img-intro-content ">
+                                    <p>  
+                                        &emsp;&emsp;2012年7月的某个夜晚，我正坐在维多利亚湖畔，陪肯尼亚蒙毕塔镇的两个孩子聊天。 
+  
+                                        “你爱肯尼亚吗？”我突发奇想地问其中一位孩子。
+  
+                                        “不 ，我不喜欢这个国家。”他不假思索地回答：“你知道吗，索马里的海盗现在已经逃到了肯尼亚，并在这里制造了很多冲突。我讨厌战争，我每天都在想着逃出这个国家。”…… 
+    
+                                    </p>
+                                </div>
+                                              
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+</body>
+</html>

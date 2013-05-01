@@ -16,5 +16,9 @@ namespace Muse.Controllers
             return View();
         }
 
+        public ActionResult Spot() {
+            return View();
+        }
+
     }
 }

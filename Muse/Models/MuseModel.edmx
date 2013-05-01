@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MuseDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="MuseDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="MuseDBModelStoreContainer">
           <EntitySet Name="Admin_tb" EntityType="MuseDBModel.Store.Admin_tb" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="User_tb" EntityType="MuseDBModel.Store.User_tb" store:Type="Tables" Schema="dbo" />
@@ -13,7 +13,7 @@
           <Key>
             <PropertyRef Name="AdminID" />
           </Key>
-          <Property Name="AdminID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="AdminID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="AdminAccount" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="AdminPwd" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="AdminAuthority" Type="int" Nullable="false" />
@@ -22,14 +22,13 @@
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="varchar" MaxLength="50" />
           <Property Name="UserAccount" Type="varchar" MaxLength="50" />
           <Property Name="UserPWD" Type="varchar" MaxLength="50" />
           <Property Name="UserScore" Type="int" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MuseDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -41,20 +40,20 @@
           <Key>
             <PropertyRef Name="AdminID" />
           </Key>
-          <Property Name="AdminID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="AdminAccount" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="AdminPwd" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="AdminAuthority" Type="Int32" Nullable="false" />
+          <Property Type="Int32" Name="AdminID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AdminAccount" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AdminPwd" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="AdminAuthority" Nullable="false" />
         </EntityType>
         <EntityType Name="User_tb">
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="UserID" Type="Int32" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="UserAccount" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="UserPWD" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="UserScore" Type="Int32" />
+          <Property Type="Int32" Name="UserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserAccount" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserPWD" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="UserScore" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -65,21 +64,21 @@
           <EntitySetMapping Name="Admin_tb">
             <EntityTypeMapping TypeName="MuseDBModel.Admin_tb">
               <MappingFragment StoreEntitySet="Admin_tb">
-                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
-                <ScalarProperty Name="AdminAccount" ColumnName="AdminAccount" />
-                <ScalarProperty Name="AdminPwd" ColumnName="AdminPwd" />
                 <ScalarProperty Name="AdminAuthority" ColumnName="AdminAuthority" />
+                <ScalarProperty Name="AdminPwd" ColumnName="AdminPwd" />
+                <ScalarProperty Name="AdminAccount" ColumnName="AdminAccount" />
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User_tb">
             <EntityTypeMapping TypeName="MuseDBModel.User_tb">
               <MappingFragment StoreEntitySet="User_tb">
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserAccount" ColumnName="UserAccount" />
-                <ScalarProperty Name="UserPWD" ColumnName="UserPWD" />
                 <ScalarProperty Name="UserScore" ColumnName="UserScore" />
+                <ScalarProperty Name="UserPWD" ColumnName="UserPWD" />
+                <ScalarProperty Name="UserAccount" ColumnName="UserAccount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

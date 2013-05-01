@@ -12,12 +12,18 @@ namespace Muse.Controllers
     {
         //
         // GET: /Account/
-
+        #region 用户登录
         public ActionResult Login()
         {
             return View();
         }
 
+        /// <summary>
+        /// 用户登录
+        /// </summary>
+        /// <param name="UserAccount"></param>
+        /// <param name="UserPWD"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Login(string UserAccount,String UserPWD)
         {
@@ -61,6 +67,62 @@ namespace Muse.Controllers
             }
             return View();
         }
-
+        #endregion
+        #region 用户注销
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
+        #endregion
+        #region 管理员登陆
+        public ActionResult AdminLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdminLogin(string AdminAccount,string AdminPWD)
+        {
+            ViewBag.UserAccount = AdminAccount;
+            ViewBag.UserPWD = AdminPWD;
+            RMuseAccount rmuseAccount = new RMuseAccount();
+            Admin_tb admin_tb = rmuseAccount.GetAdmin(AdminAccount);
+            if (admin_tb == null)
+            {
+                ViewBag.errorMsg = "账号不存在";
+            }
+            else
+            {
+                if (admin_tb.AdminPwd != AdminPWD)
+                {
+                    ViewBag.errorMsg = "密码错误";
+                }
+                else
+                {
+                    //设置Cookies，指定权限,返回至登陆前页面
+                    FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(
+                        1,
+                        admin_tb.AdminID.ToString(),
+                        DateTime.Now,
+                        DateTime.Now.AddHours(10000),
+                        false,
+                       "MuseAdmin"
+                        );
+                    string encTicket = FormsAuthentication.Encrypt(authTicket);
+                    this.Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket));
+                    string url = Request["ReturnUrl"];
+                    if (url == null)
+                    {
+                        return RedirectToAction("Index", "Admin");
+                    }
+                    else
+                    {
+                        return Redirect(url);
+                    }
+                }
+            }
+            return View();
+        }
+        #endregion
     }
 }

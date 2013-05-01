@@ -14,7 +14,7 @@ namespace Muse.Models
     
     public partial class Admin_tb
     {
-        public string AdminID { get; set; }
+        public int AdminID { get; set; }
         public string AdminAccount { get; set; }
         public string AdminPwd { get; set; }
         public int AdminAuthority { get; set; }

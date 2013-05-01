@@ -1279,6 +1279,7 @@
     <Content Include="Views\Home\Guide.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Admin\Spot.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

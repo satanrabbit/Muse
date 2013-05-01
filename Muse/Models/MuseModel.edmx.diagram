@@ -5,8 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="bf2c6dc7014c461d8620a7fb82d26ed7" Name="关系图1">
-        <EntityTypeShape EntityType="MuseDBModel.Admin_tb" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MuseDBModel.User_tb" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MuseDBModel.Admin_tb" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="MuseDBModel.User_tb" Width="1.5" PointX="2.625" PointY="0.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -12,12 +12,23 @@ namespace Muse.Controllers
     {
         //
         // GET: /Home/
+
+        /// <summary>
+        /// 首页
+        /// </summary>
+        /// <returns></returns>
         [ValidateInput(false)]
-        [JsonAuthorizeFilter(Roles = "MuseUser,MuseAdmin")]
         public ActionResult Index()
         {
             return View();
         }
+
+        //[JsonAuthorizeFilter(Roles = "MuseUser,MuseAdmin")]
+
+        /// <summary>
+        /// 推荐页
+        /// </summary>
+        /// <returns></returns>
         [JsonAuthorizeFilter(Roles="MuseUser,MuseAdmin")]
         public ActionResult Guide()
         {
