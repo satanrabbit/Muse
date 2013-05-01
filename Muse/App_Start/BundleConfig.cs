@@ -27,7 +27,7 @@ namespace Muse
                         "~/Scripts/modernizr-*"));
             bundles.Add(new ScriptBundle("~/bundles/easyui").Include(
                        "~/Content/easyui/jquery.easyui.js",
-                       "~/Content/easyui/locale/easyui-lang-cz.js",
+                       "~/Content/easyui/locale/easyui-lang-zh_CN.js",
                        "~/Content/easyui/easyui_ex.js",
                        "~/Content/easyui/jquery_easyUI_dialog_form.js"));
 

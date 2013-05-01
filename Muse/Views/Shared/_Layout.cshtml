@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/esyui/themes")
     <style>
+        .wrapper {
+            width:990px;
+            margin:10px auto;
+        }
         .head-wrapper {
             width: 990px;
             margin: 0 auto ;
@@ -55,9 +59,18 @@
             width:990px;
             margin:10px auto;
         }
+        
+.ui-form-item {
+    padding: 0 5px 20px 80px;
+}
+.ui-label {
+    width: 80px;
+    margin-left: -90px;
+}
     </style>
      @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/kessy")
+    @Scripts.Render("~/bundles/easyui")
 </head>
 <body>
     <header >

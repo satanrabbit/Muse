@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -126,10 +128,34 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin_tb.cs">
+      <DependentUpon>MuseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JsonAuthorizeFilter.cs" />
+    <Compile Include="Models\RMuseAccount.cs" />
+    <Compile Include="Models\MuseModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MuseModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MuseModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MuseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MuseModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MuseModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User_tb.cs">
+      <DependentUpon>MuseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1205,6 +1231,23 @@
     <Content Include="Content\easyui\themes\gray\images\Thumbs.db" />
     <Content Include="Content\easyui\themes\metro\images\Thumbs.db" />
     <Content Include="Json\gallery.json" />
+    <EntityDeploy Include="Models\MuseModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MuseModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MuseModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MuseModel.edmx</DependentUpon>
+      <LastGenOutput>MuseModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MuseModel.edmx.diagram">
+      <DependentUpon>MuseModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\MuseModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MuseModel.edmx</DependentUpon>
+      <LastGenOutput>MuseModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -1235,12 +1278,14 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Guide.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

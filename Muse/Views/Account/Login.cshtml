@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<div class="wrapper">
+<div class="ui-grid-row">
+    <div class="ui-grid-9"><div class="ui-box ui-box-light">
+    <div class="ui-box-head">
+        <div class="ui-box-head-border">
+            <h3 class="ui-box-head-title">登录</h3>
+        </div>
+    </div>
+    <div class="ui-box-container">
+        <div class="ui-box-content">
+            
+@using (Html.BeginForm("Login","Account",FormMethod.Post,new { id = "loginForm"  ,@class="ui-form"})) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>User_tb</legend>
+        @if (@ViewBag.errorMsg!=null)
+        {  
+        <div class="ui-form-item ui-form-item-error">
+            <p class="ui-form-explain ui-tiptext ui-tiptext-error">
+                <i class="ui-tiptext-icon iconfont" title="出错"></i><span>@ViewBag.errorMsg</span>
+            </p></div>
+        }
+        <div class="ui-form-item">
+            <label for="" class="ui-label">
+                <span class="ui-form-required">*</span>账号
+            </label>
+            <input class="ui-input easyui-validatebox" data-options="required:true" 
+                type="text" id="UserAccount" name="UserAccount" value="@ViewBag.UserAccount" />
+             
+        </div>
+
+        <div class="ui-form-item">
+            <label for="" class="ui-label">
+                <span class="ui-form-required">*</span>密码</label>
+            <input class="ui-input easyui-validatebox" data-options="required:true"
+                 name="UserPWD" id="UserPWD" type="password"  value="@ViewBag.UserPWD"> 
+        </div>
+ 
+        <div class="ui-form-item">
+            <input type="submit" class="ui-button  ui-button-morange" id="submit-button" value="确定">
+            <a  class="ui-button ui-button-mwhite" href="#" >注册</a>
+        </div> 
+        <div class="ui-form-item">
+            <a href="#">忘记密码？</a>
+        </div> 
+    </fieldset>
+}
+
+        </div>
+    </div>
+</div></div>
+    <div class="ui-grid-16"></div>
+</div>
+  
+    </div>
+<script type="text/javascript">
+    $(function () {
+        var $form= $("#loginForm"); 
+        $("#submit-button").click(function () {
+            return $form.form("validate");
+        });
+    });
+</script>
